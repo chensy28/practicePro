@@ -7,18 +7,18 @@ package com.csy.arraylist;
  * Time:22:20.
  */
 public class ArrayListTest {
-    Object []objects = new Object[3];
-    public static int size;
+    Object []objects = new  Object[3];
+    public static int  size;
     private int index;
     public void add(Object obj){
         Integer length = objects.length;
-        //Èç¹ûÊı×é³¤¶È³¬¹ıÁËÔ­À´µÄÊı×é´óĞ¡£¬Ôò½øĞĞÀ©³ä
+        //å¦‚æœæ•°ç»„é•¿åº¦è¶…è¿‡äº†åŸæ¥çš„æ•°ç»„å¤§å°ï¼Œåˆ™è¿›è¡Œæ‰©å……
         if(index == length){
-            //°´Á½±¶´óĞ¡½øĞĞÀ©³ä
+            //æŒ‰ä¸¤å€å¤§å°è¿›è¡Œæ‰©å……
             Object [] tempObject = new Object[2*objects.length];
-            //µ÷ÓÃ·½·¨½«Ô­Êı×é¸´ÖÆµ½ÁÙÊ±Êı×é£¨½«Ô­Êı×é¸´ÖÆµ½Ä¿±êÊı×é£¬×¢Òâ²ÎÊıÖĞlengthÖ¸µÄÊÇÔ­Êı×é³¤¶È£©
+            //è°ƒç”¨æ–¹æ³•å°†åŸæ•°ç»„å¤åˆ¶åˆ°ä¸´æ—¶æ•°ç»„ï¼ˆå°†åŸæ•°ç»„å¤åˆ¶åˆ°ç›®æ ‡æ•°ç»„ï¼Œæ³¨æ„å‚æ•°ä¸­lengthæŒ‡çš„æ˜¯åŸæ•°ç»„é•¿åº¦ï¼‰
             System.arraycopy(objects,0,tempObject,0,length);
-            //°ÑÄ¿±êÊı¾İµÄÒıÓÃ¸¶¸øÔ­Êı×é
+            //æŠŠç›®æ ‡æ•°æ®çš„å¼•ç”¨ä»˜ç»™åŸæ•°ç»„
             objects = tempObject;
             objects[index] = obj;
             index ++ ;
