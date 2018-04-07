@@ -3,10 +3,10 @@ package com.csy.http.perfect;
 import java.util.Map;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º²úÉúÉÏÏÂÎÄ
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ12ÈÕ ÏÂÎç23:04
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šäº§ç”Ÿä¸Šä¸‹æ–‡
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ12æ—¥ ä¸‹åˆ23:04
  *
  * @author csypc
  * @version 1.0
@@ -16,25 +16,25 @@ public class WebApp {
     static {
         /*private Map<String, Servlet> servlet;
 
-        //½«ÇëÇóurlÓë±ğÃûÓ³Éä
+        //å°†è¯·æ±‚urlä¸åˆ«åæ˜ å°„
         //  /login --> "login"
         //  /log   --> "login"
         private Map<String,String> mapping;*/
 
-        //TODO ½âÎöxmlÖĞµÄÄÚÈİÌæ»»
+        //TODO è§£æxmlä¸­çš„å†…å®¹æ›¿æ¢
         servletContext = new ServletContext();
         Map<String,String> mapping = servletContext.getMapping();
         mapping.put("/login", "login");
         mapping.put("/log", "login");
         mapping.put("/regist", "regist");
 
-        //ÈôĞèÒªĞŞ¸ÄÓ³Éä£¬ĞèÒª¶Ô³ÌĞò½øĞĞ±àÒëÖ´ĞĞ£¬¿É½«Ó³ÉäĞÅÏ¢·ÅÈëÅäÖÃÎÄ¼ş
+        //è‹¥éœ€è¦ä¿®æ”¹æ˜ å°„ï¼Œéœ€è¦å¯¹ç¨‹åºè¿›è¡Œç¼–è¯‘æ‰§è¡Œï¼Œå¯å°†æ˜ å°„ä¿¡æ¯æ”¾å…¥é…ç½®æ–‡ä»¶
         Map<String,String> servletMap = servletContext.getServlet();
         servletMap.put("login","com.csy.http.extension.LoginServlet");
         servletMap.put("regist","com.csy.http.extension.RegistServlet");
     }
 
-    //»ñÈ¡servet
+    //è·å–servet
     public static Servlet getServlet(String url) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
         if(null == url || url.trim().equals("")){
              return null;

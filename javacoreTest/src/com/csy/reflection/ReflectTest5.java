@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º·´Éä½âÎö·ºĞÍ
- * ´´½¨Ê±¼ä£º2016Äê02ÔÂ21ÈÕ ÏÂÎç10:30
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šåå°„è§£ææ³›å‹
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´02æœˆ21æ—¥ ä¸‹åˆ10:30
  *
  * @author csypc
  * @version 1.0
@@ -29,18 +29,18 @@ public class ReflectTest5 {
 
         Class clazz = ReflectTest5.class;
         Method method = clazz.getMethod("test1",Map.class,List.class);
-        //»ñÈ¡·½·¨ÖĞ²ÎÊı·ºĞÍµÄĞÅÏ¢
+        //è·å–æ–¹æ³•ä¸­å‚æ•°æ³›å‹çš„ä¿¡æ¯
         //Type[] typeArr = method.getGenericParameterTypes();
         Type[] typeArr = method.getGenericParameterTypes();
-        //»ñÈ¡·µ»ØµÄ²ÎÊıÀàĞÍ
+        //è·å–è¿”å›çš„å‚æ•°ç±»å‹
         Type returnType = method.getGenericReturnType();
 
         for (Type type : typeArr){
             //System.out.println(type.getTypeName());
             if(type instanceof ParameterizedType){
-                //»ñÈ¡Êµ¼ÊµÄ·ºĞÍ²ÎÊı(ÉÏ×ªĞÍ¶ÔÏó)
+                //è·å–å®é™…çš„æ³›å‹å‚æ•°(ä¸Šè½¬å‹å¯¹è±¡)
                 //Type[] getActualTypeArguments();
-                //¡¾×¢Òâ¡¿ÎŞÂÛ<>ÖĞÓĞ¼¸²ã<>Ç¶Ì×£¬Õâ¸ö·½·¨½ö½öÍÑÈ¥×îÍâ²ãµÄ<>Ö®ºóÊ£ÏÂµÄÄÚÈİ¾Í×÷ÎªÕâ¸ö·½·¨µÄ·µ»ØÖµ¡£
+                //ã€æ³¨æ„ã€‘æ— è®º<>ä¸­æœ‰å‡ å±‚<>åµŒå¥—ï¼Œè¿™ä¸ªæ–¹æ³•ä»…ä»…è„±å»æœ€å¤–å±‚çš„<>ä¹‹åå‰©ä¸‹çš„å†…å®¹å°±ä½œä¸ºè¿™ä¸ªæ–¹æ³•çš„è¿”å›å€¼ã€‚
                 Type[] types = ((ParameterizedType)type).getActualTypeArguments();
 
                 Type type1 = ((ParameterizedType)type).getOwnerType();

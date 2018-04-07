@@ -1,21 +1,21 @@
 package com.csy.classloader;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ04ÈÕ ÏÂÎç21:04
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ04æ—¥ ä¸‹åˆ21:04
  *
  * @author csypc
  * @version 1.0
  */
 public class Demo3 {
     public static void main(String[] args) throws Exception{
-        //Í¬Ò»¸öÀà±»²»Í¬µÄ¼ÓÔØÆ÷¼ÓÔØµÄÀà£¬ÊÇ²»Ò»ÑùµÄÀà
+        //åŒä¸€ä¸ªç±»è¢«ä¸åŒçš„åŠ è½½å™¨åŠ è½½çš„ç±»ï¼Œæ˜¯ä¸ä¸€æ ·çš„ç±»
         FileSytemLoader loader = new FileSytemLoader("H:/myjavatest");
         FileSytemLoader loader2 = new FileSytemLoader("H:/myjavatest");
         Class<?> c = loader.findClass("com.csy.HelloWorld");
-        Class<?> c2 = loader2.findClass("com.csy.HelloWorld");  //´Ë´¦Í¬Ò»¸ö¼ÓÔØÆ÷¼ÓÔØÍ¬Ò»¸öÀà£¬³ö´í(jdk8)
+        Class<?> c2 = loader2.findClass("com.csy.HelloWorld");  //æ­¤å¤„åŒä¸€ä¸ªåŠ è½½å™¨åŠ è½½åŒä¸€ä¸ªç±»ï¼Œå‡ºé”™(jdk8)
                                                                // attempted  duplicate class definition for name: "HelloWorld"
         //Class<?> c3 = loader2.findClass("com.csy.HelloWorld");
         System.out.println(c.hashCode());

@@ -7,10 +7,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º»ñÈ¡ÍøÒ³×ÊÔ´
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ30ÈÕ ÏÂÎç22:10
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šè·å–ç½‘é¡µèµ„æº
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ30æ—¥ ä¸‹åˆ22:10
  *
  * @author csypc
  * @version 1.0
@@ -19,19 +19,19 @@ public class UrlResource {
     public static void main(String[] args) throws IOException {
         URL url = new URL("http://www.baidu.com");
 
-        //´ò¿ªµ½´Ë URL µÄÁ¬½Ó²¢·µ»ØÒ»¸öÓÃÓÚ´Ó¸ÃÁ¬½Ó¶ÁÈëµÄ InputStream
+        //æ‰“å¼€åˆ°æ­¤ URL çš„è¿æ¥å¹¶è¿”å›ä¸€ä¸ªç”¨äºä»è¯¥è¿æ¥è¯»å…¥çš„ InputStream
         InputStream in = url.openStream();
 
         byte [] bytes = new byte[1024*1024];
 
        /* int i=0;
-        while(in.read() != -1){    //µ¥¸ö×Ö½Ú¶ÁÈ¡
+        while(in.read() != -1){    //å•ä¸ªå­—èŠ‚è¯»å–
             bytes[i++] = (byte)in.read();
         }*/
 
       /*  int len = 0;
-        while(-1  != (len=in.read(bytes))){ //Èç¹ûÒòÎªÁ÷Î»ÓÚÎÄ¼şÄ©Î²¶øÃ»ÓĞ¿ÉÓÃµÄ×Ö½Ú£¬Ôò·µ»ØÖµ -1
-            System.out.println(new String(bytes,0,len));//¶ÁÈ¡µÄÄÚÈİÓÉÓÚ±àÂë½âÂë²»Ò»ÖÂ£¬Ê¹µÃÄÚÈİ³öÏÖÂÒÂë
+        while(-1  != (len=in.read(bytes))){ //å¦‚æœå› ä¸ºæµä½äºæ–‡ä»¶æœ«å°¾è€Œæ²¡æœ‰å¯ç”¨çš„å­—èŠ‚ï¼Œåˆ™è¿”å›å€¼ -1
+            System.out.println(new String(bytes,0,len));//è¯»å–çš„å†…å®¹ç”±äºç¼–ç è§£ç ä¸ä¸€è‡´ï¼Œä½¿å¾—å†…å®¹å‡ºç°ä¹±ç 
         }*/
 
        /* System.out.println(new String(bytes,0,bytes.length));

@@ -4,10 +4,10 @@ import java.io.Closeable;
 import java.io.IOException;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º¹Ø±ÕÁ÷¹¤¾ß
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ04ÈÕ ÏÂÎç22:21
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šå…³é—­æµå·¥å…·
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ04æ—¥ ä¸‹åˆ22:21
  *
  * @author csypc
  * @version 1.0

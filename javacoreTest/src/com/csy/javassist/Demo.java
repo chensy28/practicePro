@@ -6,10 +6,10 @@ import javassist.CtField;
 import javassist.CtMethod;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ £ºÊ¹ÓÃjavassist´´½¨ĞÂÀà
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê02ÔÂ24ÈÕ ÏÂÎç23:36
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§° ï¼šä½¿ç”¨javassiståˆ›å»ºæ–°ç±»
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´02æœˆ24æ—¥ ä¸‹åˆ23:36
  *
  * @author csypc
  * @version 1.0
@@ -21,14 +21,14 @@ public class Demo {
         ClassPool classPool = ClassPool.getDefault();
         CtClass ctClass = classPool.makeClass("UserTest");
 
-        //Ìí¼Ó±äÁ¿
+        //æ·»åŠ å˜é‡
         //CtField field1 = CtField.make("private string name='zhangsan';",ctClass);
         CtField field2 = CtField.make("private int age=10;",ctClass);
 
         //ctClass.addField(field1);
         ctClass.addField(field2);
 
-        //Ìí¼Ó·½·¨
+        //æ·»åŠ æ–¹æ³•
        // CtMethod method1 = CtMethod.make("private String getName(){return this.name;};",ctClass);
         //CtMethod method2 = CtMethod.make("private void setName(String name){this.name=name;};",ctClass);
 
@@ -38,10 +38,10 @@ public class Demo {
         ctClass.addMethod(method1);
         ctClass.addMethod(method2);*/
 
-        //Ìí¼Ó¹¹Ôì·½·¨
+        //æ·»åŠ æ„é€ æ–¹æ³•
 
         ctClass.writeFile("c:/myjava");
-        System.out.println("Éú³ÉÀà£¬³É¹¦");
+        System.out.println("ç”Ÿæˆç±»ï¼ŒæˆåŠŸ");
 
     }
 }

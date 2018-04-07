@@ -3,10 +3,10 @@ package com.csy.classloader;
 import java.io.*;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ05ÈÕ ÏÂÎç07:59
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ05æ—¥ ä¸‹åˆ07:59
  *
  * @author csypc
  * @version 1.0
@@ -23,10 +23,10 @@ public class EncryptUtil {
             OutputStream os = new FileOutputStream(new File(desc));
 
             int temp = -1;
-            //°´µ¥×Ö½Ú¶ÁÈ¡£¬·µ»Ø0µ½255Ö®¼äµÄintµÄ×Ö½ÚÖµ£¬ÈôÃ»ÓĞ¿ÉÓÃµÄ×Ö½Ú£¬Ôò·µ»Ø-1
+            //æŒ‰å•å­—èŠ‚è¯»å–ï¼Œè¿”å›0åˆ°255ä¹‹é—´çš„intçš„å­—èŠ‚å€¼ï¼Œè‹¥æ²¡æœ‰å¯ç”¨çš„å­—èŠ‚ï¼Œåˆ™è¿”å›-1
             try {
                 while((temp = is.read()) != -1){
-                    //¼ÓÃÜ£¨½«Ô­À´µÄÄÚÈİÈ¡·´£©
+                    //åŠ å¯†ï¼ˆå°†åŸæ¥çš„å†…å®¹å–åï¼‰
                     os.write(temp ^ 0xff);
                 }
 
@@ -34,7 +34,7 @@ public class EncryptUtil {
             } catch (IOException e) {
                 e.printStackTrace();
             }finally {
-                //¹Ø±ÕÁ÷
+                //å…³é—­æµ
                 if(is != null){
                     try {
                         is.close();

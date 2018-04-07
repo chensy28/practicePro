@@ -1,10 +1,10 @@
 package com.csy.nestedclass;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º·½·¨ÄÚ²¿ÀàÊ¹ÓÃ
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ06ÈÕ ÏÂÎç10:47
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šæ–¹æ³•å†…éƒ¨ç±»ä½¿ç”¨
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ06æ—¥ ä¸‹åˆ10:47
  *
  * @author csypc
  * @version 1.0
@@ -22,26 +22,26 @@ public class MethodNestedClass {
         System.out.println("out show2");
     }
 
-    //·½·¨ÄÚ²¿Àà
+    //æ–¹æ³•å†…éƒ¨ç±»
     public void methodShow(int c){
         int d =1;
 
         int var = 22;
 
-        //·½·¨ÄÚ²¿Àà×÷ÓÃºÍ¾Ö²¿±äÁ¿ÀàËÆ£¬ËùÒÔ²»ÄÜÓÃprivate¡¢protectedµÈĞŞÊÎ
+        //æ–¹æ³•å†…éƒ¨ç±»ä½œç”¨å’Œå±€éƒ¨å˜é‡ç±»ä¼¼ï¼Œæ‰€ä»¥ä¸èƒ½ç”¨privateã€protectedç­‰ä¿®é¥°
         /*private class A{   error
         }*/
 
-        //ĞèÒªÏÈÉùÃ÷¡¢ºóÊ¹ÓÃ
+        //éœ€è¦å…ˆå£°æ˜ã€åä½¿ç”¨
         /*A inner = new A();  errror
         inner.show();*/
         class A {
             private int e = 1;
-            //·½·¨ÄÚ²¿ÀàÖ»ÄÜ°üº¬·Ç¾²Ì¬³ÉÔ±
+            //æ–¹æ³•å†…éƒ¨ç±»åªèƒ½åŒ…å«éé™æ€æˆå‘˜
             //private static int f = 1; error
 
             public void show(){
-                System.out.println("inner:"+var);//´Ë´¦·½·¨ÄÚ²¿Àà·ÃÎÊ·½·¨µÄ¾Ö²¿±äÁ¿Ã»ÓĞ¼ÓfinalÒ²¿É·ÃÎÊ£¬jdk8ÌØĞÔ£¿
+                System.out.println("inner:"+var);//æ­¤å¤„æ–¹æ³•å†…éƒ¨ç±»è®¿é—®æ–¹æ³•çš„å±€éƒ¨å˜é‡æ²¡æœ‰åŠ finalä¹Ÿå¯è®¿é—®ï¼Œjdk8ç‰¹æ€§ï¼Ÿ
                 System.out.println("inner:"+d);
                 System.out.println("inner:"+c);
 

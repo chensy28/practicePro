@@ -1,25 +1,25 @@
 package com.csy.createthread.produceAndConsumerAnother;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ12ÈÕ ÏÂÎç21:05
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ12æ—¥ ä¸‹åˆ21:05
  *
  * @author csypc
  * @version 1.0
  */
 public class App {
     public static void main(String[] args) {
-        //¹«¹²×ÊÔ´
+        //å…¬å…±èµ„æº
         Movie movie = new Movie();
-        //Éú²úÕß
+        //ç”Ÿäº§è€…
         Player player = new Player(movie);
-        //Ïû·ÑÕß
+        //æ¶ˆè´¹è€…
         Watcher watcher = new Watcher(movie);
 
-        Thread thread1 = new Thread(player,"Éú²úÕß");
-        Thread thread2 = new Thread(watcher,"Ïû·ÑÕß");
+        Thread thread1 = new Thread(player,"ç”Ÿäº§è€…");
+        Thread thread2 = new Thread(watcher,"æ¶ˆè´¹è€…");
 
         thread1.start();
         thread2.start();

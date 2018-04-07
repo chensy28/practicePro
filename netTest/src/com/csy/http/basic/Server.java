@@ -7,10 +7,10 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º·şÎñÆ÷£¨½ÓÊÕgetÇëÇó£©
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ06ÈÕ ÏÂÎç08:45
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šæœåŠ¡å™¨ï¼ˆæ¥æ”¶getè¯·æ±‚ï¼‰
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ06æ—¥ ä¸‹åˆ08:45
  *
  * @author csypc
  * @version 1.0
@@ -25,7 +25,7 @@ public class Server {
         server.receive();
     }
 
-    //Æô¶¯·şÎñ
+    //å¯åŠ¨æœåŠ¡
     public void start(){
         try {
             serverSocket = new ServerSocket(8890);
@@ -34,15 +34,15 @@ public class Server {
         }
     }
 
-    //½ÓÊÕĞÅÏ¢
+    //æ¥æ”¶ä¿¡æ¯
     public String receive(){
         try {
-            //¼àÌı²¢½ÓÊÜµ½´ËÌ×½Ó×ÖµÄÁ¬½Ó¡£
+            //ç›‘å¬å¹¶æ¥å—åˆ°æ­¤å¥—æ¥å­—çš„è¿æ¥ã€‚
             Socket socket = serverSocket.accept();
 
             StringBuilder builder = new StringBuilder();
             String msg = "";
-            //¶ÁÈ¡¿Í»§¶ËĞÅÏ¢
+            //è¯»å–å®¢æˆ·ç«¯ä¿¡æ¯
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             while((msg = reader.readLine()).length() > 0){
                   builder.append(msg);
@@ -50,7 +50,7 @@ public class Server {
             }
 
             if(!builder.toString().equals("")){
-                System.out.println("¿Í»§¶ËÇëÇóĞÅÏ¢:\n"+builder.toString().trim());
+                System.out.println("å®¢æˆ·ç«¯è¯·æ±‚ä¿¡æ¯:\n"+builder.toString().trim());
             }
 
         } catch (IOException e) {
@@ -59,7 +59,7 @@ public class Server {
         return "";
     }
 
-    //ÏìÓ¦ĞÅÏ¢
+    //å“åº”ä¿¡æ¯
     public void send(){
 
     }

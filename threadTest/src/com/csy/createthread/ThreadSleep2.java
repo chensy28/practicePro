@@ -1,10 +1,10 @@
 package com.csy.createthread;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºsleepÄ£ÄâÍøÂçÑÓÊ±
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ10ÈÕ ÏÂÎç00:27
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šsleepæ¨¡æ‹Ÿç½‘ç»œå»¶æ—¶
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ10æ—¥ ä¸‹åˆ00:27
  *
  * @author csypc
  * @version 1.0
@@ -13,9 +13,9 @@ public class ThreadSleep2 {
 
     public static void main(String[] args) {
         Web12306 web = new Web12306();
-        Thread thread1 = new Thread(web,"»ÆÅ£¼×");
-        Thread thread2 = new Thread(web,"»ÆÅ£ÒÑ");
-        Thread thread3 = new Thread(web,"Â·ÈË±û");
+        Thread thread1 = new Thread(web,"é»„ç‰›ç”²");
+        Thread thread2 = new Thread(web,"é»„ç‰›å·²");
+        Thread thread3 = new Thread(web,"è·¯äººä¸™");
 
         thread1.start();
         thread2.start();
@@ -32,13 +32,13 @@ class Web12306 implements Runnable{
             if(num <= 0){
                 break;
             }
-            //Ä£ÄâÍøÂçÑÓÊ±
+            //æ¨¡æ‹Ÿç½‘ç»œå»¶æ—¶
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(Thread.currentThread().getName()+"ÇÀµ½ÁË£º»¹Ê£Óà"+num--+"Æ±");
+            System.out.println(Thread.currentThread().getName()+"æŠ¢åˆ°äº†ï¼šè¿˜å‰©ä½™"+num--+"ç¥¨");
         }
     }
 }

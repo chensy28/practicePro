@@ -7,20 +7,20 @@ import org.xml.sax.helpers.DefaultHandler;
 import java.util.*;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºSAX2 ÊÂ¼ş´¦Àí³ÌĞò
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ13ÈÕ ÏÂÎç22:02
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šSAX2 äº‹ä»¶å¤„ç†ç¨‹åº
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ13æ—¥ ä¸‹åˆ22:02
  *
  * @author csypc
  * @version 1.0
  */
 public class PersonHandler extends DefaultHandler{
 
-    //´æ´¢½âÎöµÄ¶ÔÏó
+    //å­˜å‚¨è§£æçš„å¯¹è±¡
     private List<Person> personList;
     private Person person;
-    //¼ÇÂ¼±êÇ©Ãû
+    //è®°å½•æ ‡ç­¾å
 
     public String getTagName() {
         return tagName;
@@ -40,21 +40,21 @@ public class PersonHandler extends DefaultHandler{
 
     private String tagName;
 
-    //ÎÄµµ¿ªÊ¼
+    //æ–‡æ¡£å¼€å§‹
     @Override
     public void startDocument(){
-        System.out.println("½ÓÊÕÎÄµµ¿ªÊ¼µÄÍ¨Öª");
+        System.out.println("æ¥æ”¶æ–‡æ¡£å¼€å§‹çš„é€šçŸ¥");
         personList = new ArrayList<Person>();
     }
 
-    //ÎÄµµ½áÊø
+    //æ–‡æ¡£ç»“æŸ
     @Override
     public void endDocument(){
-        System.out.println("½ÓÊÕÎÄµµ½áÊøµÄÍ¨Öª");
+        System.out.println("æ¥æ”¶æ–‡æ¡£ç»“æŸçš„é€šçŸ¥");
     }
 
 
-    //ÔªËØ¿ªÊ¼
+    //å…ƒç´ å¼€å§‹
     @Override
     public void startElement (String uri, String localName, String qName, Attributes attributes) throws SAXException
     {
@@ -67,10 +67,10 @@ public class PersonHandler extends DefaultHandler{
             tagName = "age";
         }
 
-        //System.out.println("½ÓÊÕÔªËØ¿ªÊ¼µÄÍ¨Öª"+qName);
+        //System.out.println("æ¥æ”¶å…ƒç´ å¼€å§‹çš„é€šçŸ¥"+qName);
     }
 
-    //½ÓÊÕÔªËØÖĞ×Ö·ûÊı¾İ
+    //æ¥æ”¶å…ƒç´ ä¸­å­—ç¬¦æ•°æ®
     public void characters(char[] ch, int start, int length){
 
         String context = new String(ch,start,length).trim();
@@ -81,7 +81,7 @@ public class PersonHandler extends DefaultHandler{
         }
     }
 
-    //ÔªËØ½áÊø
+    //å…ƒç´ ç»“æŸ
     @Override
     public void endElement (String uri, String localName, String qName) throws SAXException
     {
@@ -94,6 +94,6 @@ public class PersonHandler extends DefaultHandler{
             tagName = null;
         }
 
-        //System.out.println("½ÓÊÕÔªËØ½áÊøµÄÍ¨Öª"+qName);
+        //System.out.println("æ¥æ”¶å…ƒç´ ç»“æŸçš„é€šçŸ¥"+qName);
     }
 }

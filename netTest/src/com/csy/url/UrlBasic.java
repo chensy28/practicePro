@@ -4,30 +4,30 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºURL´´½¨ÓëÊ¹ÓÃ
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ30ÈÕ ÏÂÎç21:35
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šURLåˆ›å»ºä¸ä½¿ç”¨
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ30æ—¥ ä¸‹åˆ21:35
  *
  * @author csypc
  * @version 1.0
  */
 public class UrlBasic {
     public static void main(String[] args) throws MalformedURLException {
-        //°´¾ø¶ÔÂ·¾¶´´½¨(ÈôÎ´Ö¸¶¨Ğ­Òé£¬ÔòÅ×³öMalformedURLException)
+        //æŒ‰ç»å¯¹è·¯å¾„åˆ›å»º(è‹¥æœªæŒ‡å®šåè®®ï¼Œåˆ™æŠ›å‡ºMalformedURLException)
         URL url = new URL("http://www.baidu.com:80/index.html#aa?uname=ab");
         //URL url = new URL("http://www.baidu.com:80");
 
-        //Ïà¶ÔÂ·¾¶
+        //ç›¸å¯¹è·¯å¾„
 
-        //»ñÈ¡»ù±¾ĞÅÏ¢
-        System.out.println("Ğ­Òé£º"+url.getProtocol());
-        System.out.println("Ö÷»úÃû:"+url.getHost());
-        System.out.println("¶Ë¿Ú£º"+url.getPort());
-        System.out.println("Ãªµã£º"+url.getRef());
-        System.out.println("×ÊÔ´£º"+url.getFile());
-        System.out.println("Ïà¶ÔÂ·¾¶£º"+url.getPath());
-        System.out.println("²ÎÊı£º"+url.getQuery());  //´æÔÚÃªµã£¬·µ»Ønull£¬²»´æÔÚÃªµã£¬·µ»ØÕıÈ·
+        //è·å–åŸºæœ¬ä¿¡æ¯
+        System.out.println("åè®®ï¼š"+url.getProtocol());
+        System.out.println("ä¸»æœºå:"+url.getHost());
+        System.out.println("ç«¯å£ï¼š"+url.getPort());
+        System.out.println("é”šç‚¹ï¼š"+url.getRef());
+        System.out.println("èµ„æºï¼š"+url.getFile());
+        System.out.println("ç›¸å¯¹è·¯å¾„ï¼š"+url.getPath());
+        System.out.println("å‚æ•°ï¼š"+url.getQuery());  //å­˜åœ¨é”šç‚¹ï¼Œè¿”å›nullï¼Œä¸å­˜åœ¨é”šç‚¹ï¼Œè¿”å›æ­£ç¡®
 
     }
 }

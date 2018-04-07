@@ -1,10 +1,10 @@
 package com.csy.nestedclass;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º¾²Ì¬ÄÚ²¿ÀàÊ¹ÓÃ
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ06ÈÕ ÏÂÎç09:20
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šé™æ€å†…éƒ¨ç±»ä½¿ç”¨
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ06æ—¥ ä¸‹åˆ09:20
  *
  * @author csypc
  * @version 1.0
@@ -24,12 +24,12 @@ public class StaticNestedClass {
 
     private static class A{
 
-        //¾²Ì¬ÄÚ²¿Àà¿ÉÒÔ°üº¬¾²Ì¬³ÉÔ±¡¢Ò²ÄÜ°üº¬·Ç¾²Ì¬³ÉÔ±
+        //é™æ€å†…éƒ¨ç±»å¯ä»¥åŒ…å«é™æ€æˆå‘˜ã€ä¹Ÿèƒ½åŒ…å«éé™æ€æˆå‘˜
         private int c = 1;
         private static int d = 2;
 
         public void show(){
-            //¾²Ì¬ÄÚ²¿Àà,ÄÜ·ÃÎÊÍâ²¿ÄÚµÄ¾²Ì¬³ÉÔ±£¬µ«²»ÄÜ·ÃÎÊÍâ²¿ÄÚµÄ·Ç¾²Ì¬³ÉÔ±
+            //é™æ€å†…éƒ¨ç±»,èƒ½è®¿é—®å¤–éƒ¨å†…çš„é™æ€æˆå‘˜ï¼Œä½†ä¸èƒ½è®¿é—®å¤–éƒ¨å†…çš„éé™æ€æˆå‘˜
   //          System.out.println(a);     error
             System.out.println("nested:" + b);
             System.out.println("nested:" + c);
@@ -48,7 +48,7 @@ public class StaticNestedClass {
     }
 
     public static void main(String[] args) {
-        //´´½¨ÄÚ²¿ÀàµÄ·½Ê½
+        //åˆ›å»ºå†…éƒ¨ç±»çš„æ–¹å¼
         StaticNestedClass.A a = new StaticNestedClass.A();
         //A a = new A();
         a.show();

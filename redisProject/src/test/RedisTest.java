@@ -17,23 +17,23 @@ public class RedisTest {
         //jedis.hset("h:001","name","sd");
        // Long a =jedis.del("foo");
 
-        //ÇĞ»»Êı¾İ¿â
+        //åˆ‡æ¢æ•°æ®åº“
         /*jedis.select(3);
         jedis.set("three","threes");*/
         //System.out.print(jedis.get("three"));
 
         //jedis.set("age","5");
-        //×Ô¼õ
+        //è‡ªå‡
         //jedis.decr("age");
        // System.out.print(a);
 
-        //»ñÈ¡Ê²Ã´ÅäÖÃÄÚÈİµÄ£¿
+        //è·å–ä»€ä¹ˆé…ç½®å†…å®¹çš„ï¼Ÿ
        /* List<String> strList = jedis.configGet("age");
         for(String str : strList){
             System.out.print(str);
         }*/
 
-        //È¡Ö¸¶¨·¶Î§×Ö·û´®
+        //å–æŒ‡å®šèŒƒå›´å­—ç¬¦ä¸²
         //System.out.print(jedis.getrange("csy", 0, 3));
         System.out.print(jedis.ping());
 

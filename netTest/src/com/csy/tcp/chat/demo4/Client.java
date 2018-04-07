@@ -4,26 +4,26 @@ import java.io.*;
 import java.net.Socket;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºÈºÁÄ£¬½øÈëÁÄÌìÊÒÌáĞÑ
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ03ÈÕ ÏÂÎç17:13
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šç¾¤èŠï¼Œè¿›å…¥èŠå¤©å®¤æé†’
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ03æ—¥ ä¸‹åˆ17:13
  *
  * @author csypc
  * @version 1.0
  */
 public class Client {
     public static void main(String[] args) throws IOException {
-        //´´½¨¿Í»§¶Ë£¬±ØĞëÖÆ¶¨·şÎñ¶Ë+¶Ë¿Ú£¬´ËÊ±¾ÍÔÚÁ¬½Ó
+        //åˆ›å»ºå®¢æˆ·ç«¯ï¼Œå¿…é¡»åˆ¶å®šæœåŠ¡ç«¯+ç«¯å£ï¼Œæ­¤æ—¶å°±åœ¨è¿æ¥
         Socket socket = new Socket("localhost",8889);
 
-        System.out.println("ÇëÊäÈëÃû³Æ£º");
+        System.out.println("è¯·è¾“å…¥åç§°ï¼š");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String name = reader.readLine();
 
-        //·¢ËÍÊı¾İ
+        //å‘é€æ•°æ®
         new Thread(new Send(socket,name)).start();
-        //½ÓÊÕÊı¾İ
+        //æ¥æ”¶æ•°æ®
         new Thread(new Receive(socket)).start();
     }
 }

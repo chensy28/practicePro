@@ -3,10 +3,10 @@ package com.csy.nestedclass;
 import java.util.Date;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º³ÉÔ±ÄÚ²¿ÀàÊ¹ÓÃ
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ06ÈÕ ÏÂÎç09:49
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šæˆå‘˜å†…éƒ¨ç±»ä½¿ç”¨
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ06æ—¥ ä¸‹åˆ09:49
  *
  * @author csypc
  * @version 1.0
@@ -24,28 +24,28 @@ public class MemberNestedClass {
     }
 
 
-    //¾ÍÏñ³ÉÔ±±äÁ¿´æÔÚÍâ²¿ÀàÖĞ
+    //å°±åƒæˆå‘˜å˜é‡å­˜åœ¨å¤–éƒ¨ç±»ä¸­
     private class Member{
         private int c = 1;
-        //³ÉÔ±ÄÚ²¿ÀàÖĞ²»ÄÜ°üº¬¾²Ì¬³ÉÔ±,³ı·ÇÉùÃ÷Îªfinal,²¢ÇÒÊÇ±àÒëÆ÷¿ÉÒÔÈ·¶¨µÄ³£Á¿±í´ïÊ½
+        //æˆå‘˜å†…éƒ¨ç±»ä¸­ä¸èƒ½åŒ…å«é™æ€æˆå‘˜,é™¤éå£°æ˜ä¸ºfinal,å¹¶ä¸”æ˜¯ç¼–è¯‘å™¨å¯ä»¥ç¡®å®šçš„å¸¸é‡è¡¨è¾¾å¼
        // private static int d = 2;       error
         private final static int d = 234;
         //private final static int d = new Date();
 
         public void show1(){
-            //³ÉÔ±ÄÚ²¿Àà¿ÉÒÔ·ÃÎÊÍâ²¿ÄÚµÄËùÓĞ³ÉÔ±
+            //æˆå‘˜å†…éƒ¨ç±»å¯ä»¥è®¿é—®å¤–éƒ¨å†…çš„æ‰€æœ‰æˆå‘˜
             System.out.println("out : "+a);
             System.out.println("out : "+b);
             out1();
             out2();
-            //this±íÊ¾ÄÚ²¿Àà¶ÔÏó
+            //thisè¡¨ç¤ºå†…éƒ¨ç±»å¯¹è±¡
             System.out.println(this.d);
 
-            //Íâ²¿Àà¶ÔÏó£ºÍâ²¿ÀàÃû+".this"
+            //å¤–éƒ¨ç±»å¯¹è±¡ï¼šå¤–éƒ¨ç±»å+".this"
             MemberNestedClass.this.out1();
 
             Member member = new Member();
-            System.out.println("ÄÚ²¿´´½¨:"+member.c);
+            System.out.println("å†…éƒ¨åˆ›å»º:"+member.c);
 
         }
 
@@ -57,7 +57,7 @@ public class MemberNestedClass {
     }
 
     public static void main(String[] args) {
-        //³ÉÔ±ÄÚ²¿Àà¶ÔÏóÒ»¶¨Òª°ó¶¨µ½Íâ²¿ÀàµÄ¶ÔÏó£¬ËùÒÔÓĞÍâ²¿ÀàµÄ¶ÔÏó£¬ºóÓĞ³ÉÔ±ÄÚ²¿ÀàµÄ¶ÔÏó
+        //æˆå‘˜å†…éƒ¨ç±»å¯¹è±¡ä¸€å®šè¦ç»‘å®šåˆ°å¤–éƒ¨ç±»çš„å¯¹è±¡ï¼Œæ‰€ä»¥æœ‰å¤–éƒ¨ç±»çš„å¯¹è±¡ï¼Œåæœ‰æˆå‘˜å†…éƒ¨ç±»çš„å¯¹è±¡
         MemberNestedClass.Member member = new MemberNestedClass().new Member();
         member.show1();
     }

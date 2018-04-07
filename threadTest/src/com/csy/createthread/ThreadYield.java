@@ -1,22 +1,22 @@
 package com.csy.createthread;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºÊ¹ÓÃyield×èÈûÏß³Ì
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ08ÈÕ ÏÂÎç23:13
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šä½¿ç”¨yieldé˜»å¡çº¿ç¨‹
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ08æ—¥ ä¸‹åˆ23:13
  *
  * @author csypc
  * @version 1.0
  */
 public class ThreadYield extends ThreadJoin{
-    public static void main(String[] args) {  //mainÏß³ÌµÄÏß³ÌÌå
-        ThreadYield threadJoin = new ThreadYield();//ÕæÊµ½ÇÉ«
-        Thread t = new Thread(threadJoin);//ĞÂÉú×´Ì¬£¨´úÀí½ÇÉ«£©
-        t.start();//¾ÍĞ÷×´Ì¬
+    public static void main(String[] args) {  //mainçº¿ç¨‹çš„çº¿ç¨‹ä½“
+        ThreadYield threadJoin = new ThreadYield();//çœŸå®è§’è‰²
+        Thread t = new Thread(threadJoin);//æ–°ç”ŸçŠ¶æ€ï¼ˆä»£ç†è§’è‰²ï¼‰
+        t.start();//å°±ç»ªçŠ¶æ€
         for(int i=0;i<1000;i++){
             if(i % 20 == 0){
-                Thread.yield();//ÔİÍ£µ±Ç°Ïß³Ìmain,Ğ´ÔÚÄÄ¸öÏß³ÌÌå£¬¾ÍÔİÍ£ÄÄ¸öÏß³Ì
+                Thread.yield();//æš‚åœå½“å‰çº¿ç¨‹main,å†™åœ¨å“ªä¸ªçº¿ç¨‹ä½“ï¼Œå°±æš‚åœå“ªä¸ªçº¿ç¨‹
             }
             System.out.println("main-->"+i);
         }

@@ -5,10 +5,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º¸ù¾İ·´Éä»úÖÆ¶¯Ì¬²Ù×÷ÀàÖĞµÄĞÅÏ¢
- * ´´½¨Ê±¼ä£º2016Äê02ÔÂ19ÈÕ ÏÂÎç21:57
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šæ ¹æ®åå°„æœºåˆ¶åŠ¨æ€æ“ä½œç±»ä¸­çš„ä¿¡æ¯
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´02æœˆ19æ—¥ ä¸‹åˆ21:57
  *
  * @author csypc
  * @version 1.0
@@ -17,31 +17,31 @@ public class ReflectTest3 {
     public static void main(String[] args) {
         try{
             Class clazz = Class.forName("com.csy.reflection.Demo");
-            Demo demo = (Demo)clazz.newInstance();//µ÷ÓÃÎŞ²ÎÊıµÄ¹¹Ôìº¯Êı£¬½øĞĞÊµÀı»¯¶ÔÏó
+            Demo demo = (Demo)clazz.newInstance();//è°ƒç”¨æ— å‚æ•°çš„æ„é€ å‡½æ•°ï¼Œè¿›è¡Œå®ä¾‹åŒ–å¯¹è±¡
             System.out.println(demo.getId()+":"+demo.getName()+":"+demo.getPwd());
 
-            //µ÷ÓÃ´ø²ÎÊıµÄ¹¹Ôìº¯Êı£¬È»ºóÍ¨¹ı¹¹ÔìÆ÷ÊµÀı»¯¶ÔÏó
+            //è°ƒç”¨å¸¦å‚æ•°çš„æ„é€ å‡½æ•°ï¼Œç„¶åé€šè¿‡æ„é€ å™¨å®ä¾‹åŒ–å¯¹è±¡
             Constructor constructor = clazz.getConstructor(String.class,String.class,String.class);
-            Demo demo1 = (Demo)constructor.newInstance("1","ÕÅÈı","123");
+            Demo demo1 = (Demo)constructor.newInstance("1","å¼ ä¸‰","123");
             System.out.println(demo1.getId()+":"+demo1.getName()+":"+demo1.getPwd());
 
-            //Í¨¹ı·´ÉäAPIµ÷ÓÃÆÕÍ¨·½·¨
+            //é€šè¿‡åå°„APIè°ƒç”¨æ™®é€šæ–¹æ³•
             Demo demo2 = (Demo)clazz.newInstance();
-            //¶ÔÏóÖ±½Óµ÷ÓÃ
+            //å¯¹è±¡ç›´æ¥è°ƒç”¨
             demo2.setName("aaa");
             System.out.println(demo2.getName());
 
-            //Ê¹ÓÃ·´Éä»úÖÆµ÷ÓÃ
+            //ä½¿ç”¨åå°„æœºåˆ¶è°ƒç”¨
             Constructor constructor2 = clazz.getConstructor(String.class,String.class,String.class);
-            Demo demo3 = (Demo)constructor2.newInstance("2","ÀîËÄ","123");
-            Method method = clazz.getDeclaredMethod("setName", String.class);//ÒòÎª·½·¨Ãû¡¢²ÎÊı¶¼ÊÇ±äÁ¿£¬ÊÇ¿É±äµÄ
+            Demo demo3 = (Demo)constructor2.newInstance("2","æå››","123");
+            Method method = clazz.getDeclaredMethod("setName", String.class);//å› ä¸ºæ–¹æ³•åã€å‚æ•°éƒ½æ˜¯å˜é‡ï¼Œæ˜¯å¯å˜çš„
             method.invoke(demo3,"wangwssu");
             System.out.println(demo3.getName());
 
-            //Í¨¹ı·´ÉäAPI²Ù×÷ÊôĞÔ
+            //é€šè¿‡åå°„APIæ“ä½œå±æ€§
             Demo demo4 = (Demo)clazz.newInstance();
             Field field = clazz.getDeclaredField("name");
-            field.setAccessible(true);//ÉèÖÃ¿É·ÃÎÊºó£¬¾Í²»ĞèÒª×ö°²È«¼ì²éÁË
+            field.setAccessible(true);//è®¾ç½®å¯è®¿é—®åï¼Œå°±ä¸éœ€è¦åšå®‰å…¨æ£€æŸ¥äº†
             field.set(demo4,"ssfffss");
             System.out.println(demo4.getName());
 

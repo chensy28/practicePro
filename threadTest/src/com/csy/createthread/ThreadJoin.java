@@ -2,28 +2,28 @@ package com.csy.createthread;
 
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºÏß³Ì×èÈû
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ08ÈÕ ÏÂÎç22:10
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šçº¿ç¨‹é˜»å¡
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ08æ—¥ ä¸‹åˆ22:10
  *
  * @author csypc
  * @version 1.0
  */
 public class ThreadJoin extends Thread{
     public static void main(String[] args) throws InterruptedException {
-        ThreadJoin threadJoin = new ThreadJoin();//ÕæÊµ½ÇÉ«
-        Thread t = new Thread(threadJoin);//ĞÂÉú×´Ì¬£¨´úÀí½ÇÉ«£©
-        t.start();//¾ÍĞ÷×´Ì¬
-        System.out.println("Ïß³ÌÃû£º"+t.getName()+"Ïß³ÌÊı:"+Thread.activeCount());  //3¸öÏß³Ì£¨°üº¬Ö÷Ïß³Ì£©
-        System.out.println("µ±Ç°Ïß³Ì£º"+Thread.currentThread());
-        //¶à¸öÏß³Ìcpu·ÖÅäµÄÊ±¼äÆ¬ÖĞ½»Ìæ½øĞĞ
+        ThreadJoin threadJoin = new ThreadJoin();//çœŸå®è§’è‰²
+        Thread t = new Thread(threadJoin);//æ–°ç”ŸçŠ¶æ€ï¼ˆä»£ç†è§’è‰²ï¼‰
+        t.start();//å°±ç»ªçŠ¶æ€
+        System.out.println("çº¿ç¨‹åï¼š"+t.getName()+"çº¿ç¨‹æ•°:"+Thread.activeCount());  //3ä¸ªçº¿ç¨‹ï¼ˆåŒ…å«ä¸»çº¿ç¨‹ï¼‰
+        System.out.println("å½“å‰çº¿ç¨‹ï¼š"+Thread.currentThread());
+        //å¤šä¸ªçº¿ç¨‹cpuåˆ†é…çš„æ—¶é—´ç‰‡ä¸­äº¤æ›¿è¿›è¡Œ
         for(int i=0;i<1000;i++){
            if(50 == i){
-                //t.join();//ÔÚiµÈÓÚ50Ö®Ç°£¬Ïß³Ì½»»¥½øĞĞ£¬µÈÓÚ50Ö®ºó£¬½«Ïß³ÌºÏ²¢ÎªÒ»ÌõÂ·¾¶
-               t.join(10);//µÈ´ı¸ÃÏß³ÌÖÕÖ¹µÄÊ±¼ä×î³¤Îª millis ºÁÃë,³¬¹ıÖ¸¶¨Ê±¼ä£¬¾Í²»ÔÚ×èÈû  main×èÈû
+                //t.join();//åœ¨iç­‰äº50ä¹‹å‰ï¼Œçº¿ç¨‹äº¤äº’è¿›è¡Œï¼Œç­‰äº50ä¹‹åï¼Œå°†çº¿ç¨‹åˆå¹¶ä¸ºä¸€æ¡è·¯å¾„
+               t.join(10);//ç­‰å¾…è¯¥çº¿ç¨‹ç»ˆæ­¢çš„æ—¶é—´æœ€é•¿ä¸º millis æ¯«ç§’,è¶…è¿‡æŒ‡å®šæ—¶é—´ï¼Œå°±ä¸åœ¨é˜»å¡  mainé˜»å¡
             }
-            //t.join();//½«Â·¾¶ºÏ²¢Ò»Ìõ£¬ºÏ²¢ºóÒ»ÌõÂ·¾¶Ö´ĞĞÍêÁË£¬ÔÙÖ´ĞĞÁíÒ»Ìõ
+            //t.join();//å°†è·¯å¾„åˆå¹¶ä¸€æ¡ï¼Œåˆå¹¶åä¸€æ¡è·¯å¾„æ‰§è¡Œå®Œäº†ï¼Œå†æ‰§è¡Œå¦ä¸€æ¡
             System.out.println("main-->"+i);
         }
     }

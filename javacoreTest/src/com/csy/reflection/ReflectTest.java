@@ -1,44 +1,44 @@
 package com.csy.reflection;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê02ÔÂ07ÈÕ ÏÂÎç15:15
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´02æœˆ07æ—¥ ä¸‹åˆ15:15
  *
  * @author csypc
  * @version 1.0
  */
 public class ReflectTest {
     public static void main(String[] args) {
-        //»ñÈ¡classµÄ·½Ê½
+        //è·å–classçš„æ–¹å¼
         try {
 
-            //Í¬Ò»ÀàĞÍµÄ¶ÔÏó¹²ÏíÍ¬Ò»¸öclass
-            Class clazz = Class.forName("com.csy.reflection.Demo");          //Ê¹ÓÃforName()»ñÈ¡Ö¸¶¨Ãû³ÆµÄÀà
+            //åŒä¸€ç±»å‹çš„å¯¹è±¡å…±äº«åŒä¸€ä¸ªclass
+            Class clazz = Class.forName("com.csy.reflection.Demo");          //ä½¿ç”¨forName()è·å–æŒ‡å®šåç§°çš„ç±»
             Class clazz2 = Class.forName("com.csy.reflection.Demo");
             System.out.println(clazz.hashCode()+"\n"+clazz2.hashCode());
 
-            //Ê¹ÓÃ.class»ñÈ¡Class£¨»ñÈ¡ÀàµÄClass¶ÔÏó£©
+            //ä½¿ç”¨.classè·å–Classï¼ˆè·å–ç±»çš„Classå¯¹è±¡ï¼‰
             Class clazz3 = ReflectTest.class;
             System.out.println(clazz3.hashCode()+":"+clazz3.getName());
 
             Class clazz4 = Class.class;
             System.out.println(clazz4.hashCode()+":"+clazz4.getName());
 
-            //»ñÈ¡½Ó¿ÚµÄClass¶ÔÏó
+            //è·å–æ¥å£çš„Classå¯¹è±¡
             Class clazz5 = Class.forName("com.csy.reflection.Demo2");
             System.out.println(clazz5.hashCode()+":"+clazz5.getName());
 
-            //»ñÈ¡×¢½âµÄClass¶ÔÏó
+            //è·å–æ³¨è§£çš„Classå¯¹è±¡
             Class clazz6 = Class.forName("com.csy.reflection.MyAnnotation");
             System.out.println(clazz6.hashCode()+":"+clazz6.getName());
 
-            //»ñÈ¡»ù±¾ÀàĞÍµÄClass¶ÔÏó
+            //è·å–åŸºæœ¬ç±»å‹çš„Classå¯¹è±¡
             Class clazz7 = int.class;
             System.out.println(clazz7.hashCode()+":"+clazz7.getName());
 
-            //ÏàÍ¬Î¬ÊıÇÒÀàĞÍÏàÍ¬µÄÊı×éClass¶ÔÏóÏàÍ¬
+            //ç›¸åŒç»´æ•°ä¸”ç±»å‹ç›¸åŒçš„æ•°ç»„Classå¯¹è±¡ç›¸åŒ
             int []aa = new int[2];
             int []bb = new int[23];
             System.out.println(aa.getClass().hashCode());

@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.net.Socket;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºµ÷¶ÈÆ÷
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ12ÈÕ ÏÂÎç21:40
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šè°ƒåº¦å™¨
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ12æ—¥ ä¸‹åˆ21:40
  *
  * @author csypc
  * @version 1.0
@@ -21,7 +21,7 @@ public class Dispatcher implements Runnable{
         this.client = client;
         try {
             request = new Request(client.getInputStream());
-            //½âÎöÄÚÈİ
+            //è§£æå†…å®¹
             request.parse();
             response = new Response(client.getOutputStream());
         } catch (IOException e) {
@@ -35,13 +35,13 @@ public class Dispatcher implements Runnable{
     @Override
     public void run() {
         try {
-            //¸ù¾İurlÈ·¶¨Ö´ĞĞÄÄ¸öservlet
+            //æ ¹æ®urlç¡®å®šæ‰§è¡Œå“ªä¸ªservlet
             Servlet servlet = WebApp.getServlet(request.getUrl());
             if(null == servlet){
-                code = 404; //ÇëÇóÕÒ²»µ½
+                code = 404; //è¯·æ±‚æ‰¾ä¸åˆ°
                 response.setCode(404);
             }else {
-                //µ÷ÓÃservletÖĞ·½·¨´¦Àí
+                //è°ƒç”¨servletä¸­æ–¹æ³•å¤„ç†
                 servlet.service(request, response);
                 response.setCode(200);
             }
@@ -52,7 +52,7 @@ public class Dispatcher implements Runnable{
         }
         response.pushToClient();
 
-        //¹Ø±Õsocket
+        //å…³é—­socket
 
     }
 }

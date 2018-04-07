@@ -10,10 +10,10 @@ import java.net.URL;
 import java.net.URLClassLoader;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º¶¯Ì¬±àÒë
- * ´´½¨Ê±¼ä£º2016Äê02ÔÂ21ÈÕ ÏÂÎç22:00
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šåŠ¨æ€ç¼–è¯‘
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´02æœˆ21æ—¥ ä¸‹åˆ22:00
  *
  * @author csypc
  * @version 1.0
@@ -21,28 +21,28 @@ import java.net.URLClassLoader;
 public class DynamicTest {
     public static void main(String[] args) throws Exception{
 
-        //»ñÈ¡JavaCompiler
+        //è·å–JavaCompiler
         JavaCompiler javaCompiler = ToolProvider.getSystemJavaCompiler();
-        int result = javaCompiler.run(null,null,null,"E:/HelloWorld.java");//Ö¸¶¨±àÒëjavaÎÄ¼şµØÖ·,Ç°Èı¸ö²ÎÊıÎªnull£¬Ê¹ÓÃÄ¬ÈÏµÄÖµ
-        System.out.println(result == 0 ? "±àÒës³É¹¦£¡":"±àÒëÊ§°Ü£¡" );
+        int result = javaCompiler.run(null,null,null,"E:/HelloWorld.java");//æŒ‡å®šç¼–è¯‘javaæ–‡ä»¶åœ°å€,å‰ä¸‰ä¸ªå‚æ•°ä¸ºnullï¼Œä½¿ç”¨é»˜è®¤çš„å€¼
+        System.out.println(result == 0 ? "ç¼–è¯‘sæˆåŠŸï¼":"ç¼–è¯‘å¤±è´¥ï¼" );
 
 
-        //Æô¶¯ĞÂµÄ½ø³ÌÔËĞĞ
+        //å¯åŠ¨æ–°çš„è¿›ç¨‹è¿è¡Œ
         Runtime run = Runtime.getRuntime();
         Process process = run.exec("java -cp E:/ HelloWorld");
 
-        //»ñÈ¡×Ó½ø³ÌµÄÊäÈëÁ÷
+        //è·å–å­è¿›ç¨‹çš„è¾“å…¥æµ
         InputStream inputStream = process.getInputStream();
-        //Ê¹ÓÃ»º³å×Ö·ûÁ÷(InputStreamReader ÊÇ×Ö½ÚÁ÷Í¨Ïò×Ö·ûÁ÷µÄÇÅÁº)
+        //ä½¿ç”¨ç¼“å†²å­—ç¬¦æµ(InputStreamReader æ˜¯å­—èŠ‚æµé€šå‘å­—ç¬¦æµçš„æ¡¥æ¢)
         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 
         String info = "";
         while ((info = reader.readLine()) != null){
-            System.out.println("¶¯Ì¬±àÒë¡¢Ö´ĞĞ"+info);
+            System.out.println("åŠ¨æ€ç¼–è¯‘ã€æ‰§è¡Œ"+info);
         }
 
 
-        //Ê¹ÓÃ·´ÉäÔËĞĞ±àÒëºÃµÄÀà
+        //ä½¿ç”¨åå°„è¿è¡Œç¼–è¯‘å¥½çš„ç±»
         URL[] urls = new URL[]{new URL("file:/" + "E:/")};
         URLClassLoader classLoader = new URLClassLoader(urls);
         Class classl = classLoader.loadClass("HelloWorld");

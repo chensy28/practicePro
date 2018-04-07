@@ -8,10 +8,10 @@ import java.net.Socket;
 import java.util.Date;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º·şÎñÆ÷£¨ÊÖĞ´HttpServer·şÎñÆ÷ÏìÓ¦£©
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ06ÈÕ ÏÂÎç08:45
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šæœåŠ¡å™¨ï¼ˆæ‰‹å†™HttpServeræœåŠ¡å™¨å“åº”ï¼‰
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ06æ—¥ ä¸‹åˆ08:45
  *
  * @author csypc
  * @version 1.0
@@ -20,9 +20,9 @@ public class Server3 {
 
     private ServerSocket serverSocket;
 
-    //ĞĞ½áÊø·ûÓë»Ø³µ·û
+    //è¡Œç»“æŸç¬¦ä¸å›è½¦ç¬¦
     public static String CRLF = "\r\n";
-    public static String BLANK = " ";//¿ÕĞĞ
+    public static String BLANK = " ";//ç©ºè¡Œ
 
     public static void main(String[] args) {
         Server3 server = new Server3();
@@ -30,7 +30,7 @@ public class Server3 {
         server.receive();
     }
 
-    //Æô¶¯·şÎñ
+    //å¯åŠ¨æœåŠ¡
     public void start(){
         try {
             serverSocket = new ServerSocket(8890);
@@ -39,43 +39,43 @@ public class Server3 {
         }
     }
 
-    //½ÓÊÕĞÅÏ¢
+    //æ¥æ”¶ä¿¡æ¯
     public String receive(){
         StringBuilder reponse = new StringBuilder();
         try {
-            //¼àÌı²¢½ÓÊÜµ½´ËÌ×½Ó×ÖµÄÁ¬½Ó¡£
+            //ç›‘å¬å¹¶æ¥å—åˆ°æ­¤å¥—æ¥å­—çš„è¿æ¥ã€‚
             Socket socket = serverSocket.accept();
 
             String msg = "";
-            //¶ÁÈ¡¿Í»§¶ËĞÅÏ¢£¨postĞÎÊ½£©
+            //è¯»å–å®¢æˆ·ç«¯ä¿¡æ¯ï¼ˆpostå½¢å¼ï¼‰
             byte []info = new byte[20480];
 
             int len = socket.getInputStream().read(info);
-            System.out.println("¿Í»§¶ËÇëÇóĞÅÏ¢:\n"+new String(info,0,len).trim());
+            System.out.println("å®¢æˆ·ç«¯è¯·æ±‚ä¿¡æ¯:\n"+new String(info,0,len).trim());
 
-            String context = "<html><head><title>httpÏìÓ¦</title></head><p>hello! how are you ? </p></html>";
+            String context = "<html><head><title>httpå“åº”</title></head><p>hello! how are you ? </p></html>";
 
-            //HttpĞ­Òé°æ±¾¡¢×´Ì¬´úÂë¡¢ÃèÊö
+            //Httpåè®®ç‰ˆæœ¬ã€çŠ¶æ€ä»£ç ã€æè¿°
             reponse.append("HTTP/1.1").append(BLANK).append("200").append(BLANK).append("ok").append(CRLF);
-            //ÏìÓ¦Í·
+            //å“åº”å¤´
             reponse.append("Server:csy").append(BLANK).append("Server/0.0.1").append(CRLF);
             reponse.append("Date:").append(new Date()).append(CRLF);
-            //ÏìÓ¦µÄ¸ñÊ½
+            //å“åº”çš„æ ¼å¼
             reponse.append("Context-type:text/html;charset-GBK").append(CRLF);
-            //ÏìÓ¦µÄ×Ö½ÚÊı
+            //å“åº”çš„å­—èŠ‚æ•°
             reponse.append("Context-Length:").append(context.toString().getBytes().length).append(CRLF);
 
-            //ÏìÓ¦ÕıÎÄÇ°
+            //å“åº”æ­£æ–‡å‰
             reponse.append(CRLF);
-            //ÏìÓ¦ÕıÎÄ
+            //å“åº”æ­£æ–‡
             reponse.append(context);
 
-            //Ğ´µ½Á÷ÖĞ
+            //å†™åˆ°æµä¸­
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             writer.write(reponse.toString());
             writer.flush();
             writer.close();
-            System.out.println("·şÎñ¶ËÏìÓ¦\n"+reponse.toString());
+            System.out.println("æœåŠ¡ç«¯å“åº”\n"+reponse.toString());
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -83,7 +83,7 @@ public class Server3 {
         return reponse.toString();
     }
 
-    //ÏìÓ¦ĞÅÏ¢
+    //å“åº”ä¿¡æ¯
     public void send(){
 
     }

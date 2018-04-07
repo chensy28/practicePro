@@ -5,10 +5,10 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º¶¨Ê±ÈÎÎñ
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ13ÈÕ ÏÂÎç20:11
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šå®šæ—¶ä»»åŠ¡
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ13æ—¥ ä¸‹åˆ20:11
  *
  * @author csypc
  * @version 1.0
@@ -16,12 +16,12 @@ import java.util.TimerTask;
 public class ScheduleTest {
     public static void main(String[] args) throws InterruptedException {
 
-        //´´½¨¶¨Ê±Æ÷
+        //åˆ›å»ºå®šæ—¶å™¨
         Timer timer = new Timer();
 
-        //°²ÅÅÔÚÖ¸¶¨µÄÊ±¼äÖ´ĞĞÖ¸¶¨µÄÈÎÎñ¡£
+        //å®‰æ’åœ¨æŒ‡å®šçš„æ—¶é—´æ‰§è¡ŒæŒ‡å®šçš„ä»»åŠ¡ã€‚
         timer.schedule(new TimerTask() {
-            //TimerTaskÊµÏÖRunnable£¬¶¨Ê±Æ÷ÈÎÎñ
+            //TimerTaskå®ç°Runnableï¼Œå®šæ—¶å™¨ä»»åŠ¡
             @Override
             public void run() {
                 System.out.println("time schedule...");
@@ -30,7 +30,7 @@ public class ScheduleTest {
 
         Thread.sleep(1000);
 
-        //ÖÕÖ¹´Ë¼ÆÊ±Æ÷£¬¶ªÆúËùÓĞµ±Ç°ÒÑ°²ÅÅµÄÈÎÎñ¡£
+        //ç»ˆæ­¢æ­¤è®¡æ—¶å™¨ï¼Œä¸¢å¼ƒæ‰€æœ‰å½“å‰å·²å®‰æ’çš„ä»»åŠ¡ã€‚
         timer.cancel();
     }
 }

@@ -1,10 +1,10 @@
 package com.csy.createthread.signForDeakLock;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º³ÔÃæ£¨³¡¾°£©
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ13ÈÕ ÏÂÎç12:10
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šåƒé¢ï¼ˆåœºæ™¯ï¼‰
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ13æ—¥ ä¸‹åˆ12:10
  *
  * @author csypc
  * @version 1.0
@@ -16,9 +16,9 @@ public class EatNoodles {
         Cook cook = new Cook(handSide);
         Consumer consumer = new Consumer(handSide);
 
-        //Á½¸öÏß³ÌÆô¶¯ºó£¬¶¼»áÈ¥ÇÀ¶á×ÊÔ´
-        new Thread(cook,"³øÊ¦").start();
-        new Thread(consumer,"³Ô¿Í").start();
+        //ä¸¤ä¸ªçº¿ç¨‹å¯åŠ¨åï¼Œéƒ½ä¼šå»æŠ¢å¤ºèµ„æº
+        new Thread(cook,"å¨å¸ˆ").start();
+        new Thread(consumer,"åƒå®¢").start();
 
     }
 }

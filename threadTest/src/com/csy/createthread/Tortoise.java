@@ -10,7 +10,7 @@ public class Tortoise extends Thread{
     @Override
     public void run(){
      /* for (int i=0;i<10;i++) {
-            System.out.println("ÎÚ¹ê×ßÁË£º" + i + "²½");
+            System.out.println("ä¹Œé¾Ÿèµ°äº†ï¼š" + i + "æ­¥");
         }*/
     }
 }
@@ -19,7 +19,7 @@ class Dog extends Thread{
     @Override
     public void run(){
         for (int i=0;i<5;i++) {
-            System.out.println("¹·×ßÁË£º" + i + "²½");
+            System.out.println("ç‹—èµ°äº†ï¼š" + i + "æ­¥");
         }
     }
 }

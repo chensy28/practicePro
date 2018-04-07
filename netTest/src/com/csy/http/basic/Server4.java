@@ -5,10 +5,10 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º·şÎñÆ÷£¨·â×°response£©
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ06ÈÕ ÏÂÎç08:45
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šæœåŠ¡å™¨ï¼ˆå°è£…responseï¼‰
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ06æ—¥ ä¸‹åˆ08:45
  *
  * @author csypc
  * @version 1.0
@@ -24,7 +24,7 @@ public class Server4 {
         server.receive();
     }
 
-    //Æô¶¯·şÎñ
+    //å¯åŠ¨æœåŠ¡
     public void start(){
         try {
             serverSocket = new ServerSocket(8890);
@@ -33,23 +33,23 @@ public class Server4 {
         }
     }
 
-    //½ÓÊÕĞÅÏ¢
+    //æ¥æ”¶ä¿¡æ¯
     public String receive(){
         StringBuilder reponse = new StringBuilder();
         try {
-            //¼àÌı²¢½ÓÊÜµ½´ËÌ×½Ó×ÖµÄÁ¬½Ó¡£
+            //ç›‘å¬å¹¶æ¥å—åˆ°æ­¤å¥—æ¥å­—çš„è¿æ¥ã€‚
             Socket socket = serverSocket.accept();
 
             String msg = "";
-            //¶ÁÈ¡¿Í»§¶ËĞÅÏ¢£¨postĞÎÊ½£©
+            //è¯»å–å®¢æˆ·ç«¯ä¿¡æ¯ï¼ˆpostå½¢å¼ï¼‰
             byte []info = new byte[20480];
             int len = socket.getInputStream().read(info);
 
-            System.out.println("¿Í»§¶ËÇëÇóĞÅÏ¢:\n"+new String(info,0,len).trim());
+            System.out.println("å®¢æˆ·ç«¯è¯·æ±‚ä¿¡æ¯:\n"+new String(info,0,len).trim());
 
             Response response = new Response(socket.getOutputStream());
             response.createHead(200);
-            String context = "<html><head><title>responseÏìÓ¦·â×°</title></head><p>·â×°response </p></html>";
+            String context = "<html><head><title>responseå“åº”å°è£…</title></head><p>å°è£…response </p></html>";
             response.print(context);
             response.setLen(context.getBytes().length);
             response.pushToClient();
@@ -60,7 +60,7 @@ public class Server4 {
         return reponse.toString();
     }
 
-    //ÏìÓ¦ĞÅÏ¢
+    //å“åº”ä¿¡æ¯
     public void send(){
 
     }

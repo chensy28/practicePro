@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.net.Socket;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º½ÓÊÕÊı¾İÏß³Ì
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ04ÈÕ ÏÂÎç22:02
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šæ¥æ”¶æ•°æ®çº¿ç¨‹
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ04æ—¥ ä¸‹åˆ22:02
  *
  * @author csypc
  * @version 1.0
@@ -21,7 +21,7 @@ public class Receive implements Runnable{
 
     }
 
-    //³õÊ¼»¯Êı¾İ
+    //åˆå§‹åŒ–æ•°æ®
     public Receive(Socket client){
         try {
             dis = new DataInputStream(client.getInputStream());
@@ -32,7 +32,7 @@ public class Receive implements Runnable{
         }
     }
 
-    //½ÓÊÕÊı¾İ
+    //æ¥æ”¶æ•°æ®
     public String getMsg(){
         String msg = "";
         try {
@@ -49,7 +49,7 @@ public class Receive implements Runnable{
     public void run() {
         while (isRunning){
             String msg = getMsg();
-            System.out.println("¿Í·ş¶Ë½ÓÊÕ:"+msg);
+            System.out.println("å®¢æœç«¯æ¥æ”¶:"+msg);
         }
     }
 }

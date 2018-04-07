@@ -1,19 +1,19 @@
 package com.csy.createthread.proxy;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º¾²Ì¬´úÀí
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ06ÈÕ ÏÂÎç21:46
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼šé™æ€ä»£ç†
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ06æ—¥ ä¸‹åˆ21:46
  *
  * @author csypc
  * @version 1.0
  */
 public class StaticProxy {
-    //¾²Ì¬´úÀí Éè¼ÆÄ£Ê½
-    //ÕæÊµ½ÇÉ«
-    //´úÀí½ÇÉ« £º³ÖÓĞÕæÉ«½ÇÉ«µÄÒıÓÃ
-    //¶şÕßÊµÏÖÏàÍ¬µÄ½Ó¿Ú
+    //é™æ€ä»£ç† è®¾è®¡æ¨¡å¼
+    //çœŸå®è§’è‰²
+    //ä»£ç†è§’è‰² ï¼šæŒæœ‰çœŸè‰²è§’è‰²çš„å¼•ç”¨
+    //äºŒè€…å®ç°ç›¸åŒçš„æ¥å£
 
     public static void main(String[] args) {
         You you = new You();
@@ -23,15 +23,15 @@ public class StaticProxy {
 
 }
 
-//ÕæÊµ½ÇÉ«
+//çœŸå®è§’è‰²
 class You implements Marry{
     @Override
     public void marry(){
-        System.out.println("xiaoli marry with a girl£¡");
+        System.out.println("xiaoli marry with a girlï¼");
     }
 }
 
-//´úÀí½ÇÉ«
+//ä»£ç†è§’è‰²
 class MarryCompany implements Marry{
 
     private You you;
@@ -39,7 +39,7 @@ class MarryCompany implements Marry{
 
     }
 
-    //³ÖÓĞÕæÊµ½ÇÉ«µÄÒıÓÃ
+    //æŒæœ‰çœŸå®è§’è‰²çš„å¼•ç”¨
     public MarryCompany(You you){
        this.you = you;
     }
@@ -59,7 +59,7 @@ class MarryCompany implements Marry{
     }
 }
 
-//¹«¹²½Ó¿Ú
+//å…¬å…±æ¥å£
 interface Marry{
     void marry();
 }

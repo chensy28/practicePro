@@ -18,7 +18,7 @@ import java.util.List;
 public class MyJacob {
     public static void main(String[] args) {
 
-        ComThread.InitSTA();// ³õÊ¼»¯comµÄÏß³Ì£¬·Ç³£ÖØÒª£¡£¡Ê¹ÓÃ½áÊøºóÒªµ÷ÓÃ realease·½·¨
+        ComThread.InitSTA();// åˆå§‹åŒ–comçš„çº¿ç¨‹ï¼Œéå¸¸é‡è¦ï¼ï¼ä½¿ç”¨ç»“æŸåè¦è°ƒç”¨ realeaseæ–¹æ³•
         ActiveXComponent objWord = new ActiveXComponent("Word.Application");
 
         Dispatch doc = objWord.getProperty("Application").toDispatch();
@@ -26,11 +26,11 @@ public class MyJacob {
         Dispatch documents = objWord.getProperty("Documents").toDispatch();
         //Variant v = Dispatch.get(documents, "ActiveCell");
         Dispatch document = Dispatch.call(documents, "Open", "d:/poitest.doc").toDispatch();
-        //Dispatch wordContent = Dispatch.get(document, "Content").toDispatch(); // È¡µÃwordÎÄ¼şµÄÄÚÈİ
+        //Dispatch wordContent = Dispatch.get(document, "Content").toDispatch(); // å–å¾—wordæ–‡ä»¶çš„å†…å®¹
         //Long pdis = wordContent.m_pDispatch;
         //Variant result =Dispatch.call(objWord, "Run", new Variant("macro1"));
         //Dispatch.
-        //Dispatch.put(document, "Visible", new Variant(true));// new Variant(true)±íÊ¾wordÓ¦ÓÃ³ÌĞò¿É¼û
+        //Dispatch.put(document, "Visible", new Variant(true));// new Variant(true)è¡¨ç¤ºwordåº”ç”¨ç¨‹åºå¯è§
         //Variant temp = Dispatch.get(wordContent,0);
         //System.out.print(temp.getString());
 
@@ -38,7 +38,7 @@ public class MyJacob {
         DispatchEvents events = new DispatchEvents(documents,listenEvent);
        // events.
         //Dispatch.callSub();
-        System.out.print("·¢¶àÉÙ¶àÉÙ·Ö·ÖÀà");
-        ComThread.Release();//ÊÍ·ÅcomÏß³Ì¡£¸ù¾İjacobµÄ°ïÖúÎÄµµ£¬comµÄÏß³Ì»ØÊÕ²»ÓÉjavaµÄÀ¬»ø»ØÊÕÆ÷´¦Àí
+        System.out.print("å‘å¤šå°‘å¤šå°‘åˆ†åˆ†ç±»");
+        ComThread.Release();//é‡Šæ”¾comçº¿ç¨‹ã€‚æ ¹æ®jacobçš„å¸®åŠ©æ–‡æ¡£ï¼Œcomçš„çº¿ç¨‹å›æ”¶ä¸ç”±javaçš„åƒåœ¾å›æ”¶å™¨å¤„ç†
     }
 }

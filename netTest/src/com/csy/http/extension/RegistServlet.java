@@ -1,10 +1,10 @@
 package com.csy.http.extension;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ12ÈÕ ÏÂÎç23:01
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ12æ—¥ ä¸‹åˆ23:01
  *
  * @author csypc
  * @version 1.0
@@ -19,7 +19,7 @@ public class RegistServlet extends Servlet {
     @Override
     public void doPost(Request request, Response response) {
         response.createHead(200);
-        String context = "<html><head><title>×¢²áÒ³Ãæ</title></head><body>×¢²á³É¹¦</body></html>";
+        String context = "<html><head><title>æ³¨å†Œé¡µé¢</title></head><body>æ³¨å†ŒæˆåŠŸ</body></html>";
         response.print(context);
     }
 }

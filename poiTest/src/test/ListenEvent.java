@@ -10,10 +10,10 @@ import com.jacob.com.InvocationProxy;
 public class ListenEvent extends InvocationProxy {
 
     public void OnFinger(Variant[] arge) {
-        System.out.println("µ±»úÆ÷ÉÏÖ¸ÎÆÍ·ÉÏ¼ì²âµ½ÓĞÖ¸ÎÆÊ±´¥·¢¸ÃÏûÏ¢£¬ÎŞ·µ»ØÖµ");
+        System.out.println("å½“æœºå™¨ä¸ŠæŒ‡çº¹å¤´ä¸Šæ£€æµ‹åˆ°æœ‰æŒ‡çº¹æ—¶è§¦å‘è¯¥æ¶ˆæ¯ï¼Œæ— è¿”å›å€¼");
     }
     public void OnVerify(Variant[] arge) {
-        System.out.println("µ±»úÆ÷ÉÏÖ¸ÎÆÍ·ÉÏ¼ì²âµ½ÓĞÖ¸ÎÆÊ±´¥·¢¸ÃÏûÏ¢£¬ÎŞ·µ»ØÖµ"+arge.toString());
+        System.out.println("å½“æœºå™¨ä¸ŠæŒ‡çº¹å¤´ä¸Šæ£€æµ‹åˆ°æœ‰æŒ‡çº¹æ—¶è§¦å‘è¯¥æ¶ˆæ¯ï¼Œæ— è¿”å›å€¼"+arge.toString());
     }
 
     public void OnConnected(){
@@ -27,7 +27,7 @@ public class ListenEvent extends InvocationProxy {
     @Override
     public Variant invoke(String var1, Variant[] var2){
         Variant variant = new Variant();
-        System.out.print("sdsdfdfsdÁ¢¼´ËÍ¸£Àû");
+        System.out.print("sdsdfdfsdç«‹å³é€ç¦åˆ©");
         return variant;
     }
 }

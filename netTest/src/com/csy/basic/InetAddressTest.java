@@ -4,10 +4,10 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º±íÊ¾»¥ÁªÍøĞ­Òé (IP) µØÖ·
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ29ÈÕ ÏÂÎç08:35
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šè¡¨ç¤ºäº’è”ç½‘åè®® (IP) åœ°å€
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ29æ—¥ ä¸‹åˆ08:35
  *
  * @author csypc
  * @version 1.0
@@ -15,14 +15,14 @@ import java.net.UnknownHostException;
 public class InetAddressTest {
     public static void main(String[] args) {
         try {
-            // ·µ»Ø±¾µØÖ÷»ú¡£
+            // è¿”å›æœ¬åœ°ä¸»æœºã€‚
             //InetAddress address = InetAddress.getLocalHost();
 
-            //ÔÚ¸ø¶¨Ö÷»úÃûµÄÇé¿öÏÂÈ·¶¨Ö÷»úµÄ IP µØÖ·¡£
+            //åœ¨ç»™å®šä¸»æœºåçš„æƒ…å†µä¸‹ç¡®å®šä¸»æœºçš„ IP åœ°å€ã€‚
             //InetAddress address = InetAddress.getByName("www.baidu.com");
 
             byte[] addr = {127,0,0,1};
-            //ÔÚ¸ø¶¨Ô­Ê¼ IP µØÖ·µÄÇé¿öÏÂ£¬·µ»Ø InetAddress ¶ÔÏó¡£
+            //åœ¨ç»™å®šåŸå§‹ IP åœ°å€çš„æƒ…å†µä¸‹ï¼Œè¿”å› InetAddress å¯¹è±¡ã€‚
             InetAddress address = InetAddress.getByAddress(addr);
 
             byte []bytes = address.getAddress();

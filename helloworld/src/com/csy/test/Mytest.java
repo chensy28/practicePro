@@ -11,7 +11,7 @@ public class Mytest {
 
        /* BasicTest basicTest = new BasicTest();
         //System.out.print("Hello world !");
-        basicTest.setName("2332不同模块调用");
+        basicTest.setName("2332涓嶅悓妯″潡璋冪敤");
         System.out.print(basicTest.getName());*/
         System.out.print("hello test");
     }

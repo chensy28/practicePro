@@ -3,10 +3,10 @@ package com.csy.annocation;
 import java.util.Date;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£ºDemo1
- * ÀàÃèÊö£º×¢½â
- * ´´½¨Ê±¼ä£º2016Äê01ÔÂ26ÈÕ ÏÂÎç22:59
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼šDemo1
+ * ç±»æè¿°ï¼šæ³¨è§£
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´01æœˆ26æ—¥ ä¸‹åˆ22:59
  *
  * @author csypc
  * @version 1.0

@@ -5,10 +5,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºÍ¨¹ı·´Éä»úÖÆ»ñÈ¡Àà¡¢ÊôĞÔ¡¢·½·¨¡¢¹¹Ôì·½·¨µÄĞÅÏ¢
- * ´´½¨Ê±¼ä£º2016Äê02ÔÂ07ÈÕ ÏÂÎç15:15
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šé€šè¿‡åå°„æœºåˆ¶è·å–ç±»ã€å±æ€§ã€æ–¹æ³•ã€æ„é€ æ–¹æ³•çš„ä¿¡æ¯
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´02æœˆ07æ—¥ ä¸‹åˆ15:15
  *
  * @author csypc
  * @version 1.0
@@ -16,60 +16,60 @@ import java.lang.reflect.Method;
 public class ReflectTest2 {
     public static void main(String[] args) {
         try {
-            //»ñÈ¡ÀàµÄÃû³Æ
+            //è·å–ç±»çš„åç§°
             Class clazz = Class.forName("com.csy.reflection.Demo");
-            System.out.println(clazz.getName());//»ñÈ¡°üÃû+ÀàÃû
-            System.out.println(clazz.getSimpleName());//»ñÈ¡ÀàÃû
+            System.out.println(clazz.getName());//è·å–åŒ…å+ç±»å
+            System.out.println(clazz.getSimpleName());//è·å–ç±»å
 
-            //»ñÈ¡ÊôĞÔµÄĞÅÏ¢
-            Field[] fields = clazz.getFields();   //»ñÈ¡ËùÓĞ¿É·ÃÎÊ¹«¹²×Ö¶Î
+            //è·å–å±æ€§çš„ä¿¡æ¯
+            Field[] fields = clazz.getFields();   //è·å–æ‰€æœ‰å¯è®¿é—®å…¬å…±å­—æ®µ
             System.out.println(fields.length);
 
-            //»ñÈ¡Ö¸¶¨Ãû³ÆµÄ¹«¹²×Ö¶Î
+            //è·å–æŒ‡å®šåç§°çš„å…¬å…±å­—æ®µ
             Field field = clazz.getField("pwd");
             System.out.println(field.getName());
 
-            //»ñÈ¡ÉùÃ÷µÄËùÓĞ×Ö¶Î£¨°üÀ¨private¡¢publicµÈ£©
+            //è·å–å£°æ˜çš„æ‰€æœ‰å­—æ®µï¼ˆåŒ…æ‹¬privateã€publicç­‰ï¼‰
             Field[] fields2 = clazz.getDeclaredFields();
             System.out.println(fields2.length);
 
-            //»ñÈ¡Ö¸¶¨Ãû³ÆµÄ×Ö¶Î
+            //è·å–æŒ‡å®šåç§°çš„å­—æ®µ
             Field field2 = clazz.getDeclaredField("name");
             System.out.println(field2.getName());
 
-            //»ñÈ¡¹«¹²µÄ·½·¨(°üÀ¨´Ó¸¸Àà¼Ì³ĞµÄ¹«¹²·½·¨)
+            //è·å–å…¬å…±çš„æ–¹æ³•(åŒ…æ‹¬ä»çˆ¶ç±»ç»§æ‰¿çš„å…¬å…±æ–¹æ³•)
             Method[] methods = clazz.getMethods();
             for(Method method : methods) {
-                System.out.println("ËùÓĞµÄ¹«¹²·½·¨£º" + method.getName());
+                System.out.println("æ‰€æœ‰çš„å…¬å…±æ–¹æ³•ï¼š" + method.getName());
             }
 
-            //»ñÈ¡Ö¸¶¨²ÎÊıµÄ¹«¹²·½·¨
+            //è·å–æŒ‡å®šå‚æ•°çš„å…¬å…±æ–¹æ³•
             Method method = clazz.getMethod("setId", String.class);
-            System.out.println("Ö¸¶¨µÄ¹«¹²·½·¨£º"+method.getName());
+            System.out.println("æŒ‡å®šçš„å…¬å…±æ–¹æ³•ï¼š"+method.getName());
 
-            //»ñÈ¡ËùÓĞÉùÃ÷µÄ·½·¨£¨²»°üÀ¨´Ó¸¸Àà¼Ì³ĞµÄ·½·¨£©
+            //è·å–æ‰€æœ‰å£°æ˜çš„æ–¹æ³•ï¼ˆä¸åŒ…æ‹¬ä»çˆ¶ç±»ç»§æ‰¿çš„æ–¹æ³•ï¼‰
             Method [] methods1 = clazz.getDeclaredMethods();
             for(Method method2 : methods1) {
-                System.out.println("ËùÓĞÉùÃ÷µÄ·½·¨£º" + method2.getName());
+                System.out.println("æ‰€æœ‰å£°æ˜çš„æ–¹æ³•ï¼š" + method2.getName());
             }
 
-            //»ñÈ¡Ö¸¶¨²ÎÊıµÄ·½·¨
+            //è·å–æŒ‡å®šå‚æ•°çš„æ–¹æ³•
             Method method3 = clazz.getDeclaredMethod("show", null);
-            System.out.println("Ö¸¶¨µÄ·½·¨£º"+method3.getName());
+            System.out.println("æŒ‡å®šçš„æ–¹æ³•ï¼š"+method3.getName());
 
-            //»ñÈ¡¹¹Ôìº¯Êı(¹«¹²µÄ¹¹Ôìº¯Êı)
+            //è·å–æ„é€ å‡½æ•°(å…¬å…±çš„æ„é€ å‡½æ•°)
             Constructor[] constructors = clazz.getConstructors();
-            System.out.println("¹¹Ôìº¯Êı£º"+constructors.length);
+            System.out.println("æ„é€ å‡½æ•°ï¼š"+constructors.length);
 
-            //»ñÈ¡Ö¸¶¨µÄ¹¹Ôìº¯Êı(¹«¹²µÄ¹¹Ôìº¯Êı)
+            //è·å–æŒ‡å®šçš„æ„é€ å‡½æ•°(å…¬å…±çš„æ„é€ å‡½æ•°)
             Constructor constructor = clazz.getConstructor(String.class,String.class,String.class);
             System.out.println(constructor.getName());
 
-            //»ñÈ¡¹¹Ôìº¯Êı
+            //è·å–æ„é€ å‡½æ•°
             Constructor[] constructors2 = clazz.getDeclaredConstructors();
-            System.out.println("ËùÓĞ¹¹Ôìº¯Êı£º"+constructors2.length);
+            System.out.println("æ‰€æœ‰æ„é€ å‡½æ•°ï¼š"+constructors2.length);
 
-            //»ñÈ¡Ö¸¶¨µÄ¹¹Ôìº¯Êı
+            //è·å–æŒ‡å®šçš„æ„é€ å‡½æ•°
             Constructor constructor2 = clazz.getDeclaredConstructor(String.class, String.class, String.class);
             System.out.println(constructor2.getName());
 

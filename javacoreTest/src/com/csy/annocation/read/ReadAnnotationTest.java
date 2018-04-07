@@ -8,10 +8,10 @@ import java.lang.reflect.Method;
 import com.csy.annocation.read.Student;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê01ÔÂ28ÈÕ ÏÂÎç21:30
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´01æœˆ28æ—¥ ä¸‹åˆ21:30
  *
  * @author csypc
  * @version 1.0
@@ -30,11 +30,11 @@ public class ReadAnnotationTest {
             }
 
 
-            //»ñÈ¡Ö¸¶¨ÀàµÄ×¢½â
+            //è·å–æŒ‡å®šç±»çš„æ³¨è§£
             TableAnnotation table = (TableAnnotation)clazz.getAnnotation(TableAnnotation.class);
             System.out.println(table.tableName());
 
-            //»ñÈ¡Ö¸¶¨×Ö¶ÎµÄ×¢½â
+            //è·å–æŒ‡å®šå­—æ®µçš„æ³¨è§£
             Field field = clazz.getDeclaredField("age");
             FieldAnnotation anno = field.getAnnotation(FieldAnnotation.class);
             System.out.println(anno.filedName()+":"+anno.isNull()+":"+anno.length());

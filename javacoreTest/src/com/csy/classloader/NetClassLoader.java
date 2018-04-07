@@ -7,10 +7,10 @@ import java.io.InputStream;
 import java.net.URL;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º×Ô¶¨ÒåÀà¼ÓÔØÆ÷£¨¼Ì³ĞClassLoaderÀà£©
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ04ÈÕ ÏÂÎç08:51
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šè‡ªå®šä¹‰ç±»åŠ è½½å™¨ï¼ˆç»§æ‰¿ClassLoaderç±»ï¼‰
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ04æ—¥ ä¸‹åˆ08:51
  *
  * @author csypc
  * @version 1.0
@@ -26,11 +26,11 @@ public class NetClassLoader extends ClassLoader{
     protected Class<?> findClass(String name) throws ClassNotFoundException {
         Class<?> c = findLoadedClass(name);
 
-        //ÅĞ¶ÏÀàÊÇ·ñ±»¼ÓÔØ¹ı£¬Èô¼ÓÔØ¹ı£¬Ö±½Ó·µ»Ø£»
+        //åˆ¤æ–­ç±»æ˜¯å¦è¢«åŠ è½½è¿‡ï¼Œè‹¥åŠ è½½è¿‡ï¼Œç›´æ¥è¿”å›ï¼›
         if(c != null){
             return c;
         }else {
-            //ÈôÃ»ÓĞ¼ÓÔØ£¬Î¯ÅÉ¸¸¼ÓÔØÆ÷¼ÓÔØ
+            //è‹¥æ²¡æœ‰åŠ è½½ï¼Œå§”æ´¾çˆ¶åŠ è½½å™¨åŠ è½½
             ClassLoader parent = this.getParent();
             try {
                 c = parent.loadClass(name);
@@ -40,12 +40,12 @@ public class NetClassLoader extends ClassLoader{
             if(c != null){
                 return c;
             }else{
-                //Èô¼ÓÔØÆ÷Ã»ÓĞ¼ÓÔØ£¬ÔòÍ¨¹ıio¶ÁÈ¡ÎÄ¼ş£¬»ñÈ¡×Ö½ÚÊı×é£¬²¢×ª»»Îªclass¶ÔÏó
+                //è‹¥åŠ è½½å™¨æ²¡æœ‰åŠ è½½ï¼Œåˆ™é€šè¿‡ioè¯»å–æ–‡ä»¶ï¼Œè·å–å­—èŠ‚æ•°ç»„ï¼Œå¹¶è½¬æ¢ä¸ºclasså¯¹è±¡
                 byte [] classData = getClassData(name);
                 if(classData == null){
                     throw new ClassNotFoundException();
                 }else{
-                    //ËùĞèÀàµÄ ¶ş½øÖÆÃû³Æ£¬Èç¹û²»ÖªµÀ´ËÃû³Æ£¬Ôò¸Ã²ÎÊıÎª null
+                    //æ‰€éœ€ç±»çš„ äºŒè¿›åˆ¶åç§°ï¼Œå¦‚æœä¸çŸ¥é“æ­¤åç§°ï¼Œåˆ™è¯¥å‚æ•°ä¸º null
                     c = defineClass(null,classData,0,classData.length);
                     return c;
                 }
@@ -61,13 +61,13 @@ public class NetClassLoader extends ClassLoader{
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         try {
 
-            //´´½¨URL
+            //åˆ›å»ºURL
             URL url = new URL(path);
             is = url.openStream();
 
             byte [] arrs = new byte[1024];
             int temp = 0;
-            while((temp = is.read(arrs)) != -1){     //½«´ÓÊäÈëÁ÷ÖĞ¶ÁÈ¡µÄÊı¾İĞ´µ½Êä³öÁ÷ÖĞ
+            while((temp = is.read(arrs)) != -1){     //å°†ä»è¾“å…¥æµä¸­è¯»å–çš„æ•°æ®å†™åˆ°è¾“å‡ºæµä¸­
                 out.write(arrs,0,temp);
             }
             return out.toByteArray();

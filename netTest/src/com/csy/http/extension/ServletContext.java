@@ -5,21 +5,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºÉÏÏÂÎÄ
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ12ÈÕ ÏÂÎç22:24
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šä¸Šä¸‹æ–‡
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ12æ—¥ ä¸‹åˆ22:24
  *
  * @author csypc
  * @version 1.0
  */
 public class ServletContext {
-    //ÎªÃ¿¸öservletÆğÒ»¸ö±ğÃû
-    //private Map<String, Servlet> servlet; //¼üÖµ¶ÔÖĞ´æ¶ÔÏó±È½ÏºÄ¿Õ¼ä£¬¿É´æ°üÂ·¾¶£¬È»ºóÍ¨¹ı·´Éä
+    //ä¸ºæ¯ä¸ªservletèµ·ä¸€ä¸ªåˆ«å
+    //private Map<String, Servlet> servlet; //é”®å€¼å¯¹ä¸­å­˜å¯¹è±¡æ¯”è¾ƒè€—ç©ºé—´ï¼Œå¯å­˜åŒ…è·¯å¾„ï¼Œç„¶åé€šè¿‡åå°„
 
     private Map<String,String> servlet;
 
-    //½«ÇëÇóurlÓë±ğÃûÓ³Éä
+    //å°†è¯·æ±‚urlä¸åˆ«åæ˜ å°„
     //  /login --> "login"
     //  /log   --> "login"
     private Map<String,String> mapping;

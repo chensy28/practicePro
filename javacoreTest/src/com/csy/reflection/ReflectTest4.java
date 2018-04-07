@@ -3,10 +3,10 @@ package com.csy.reflection;
 import java.lang.reflect.Method;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º·´Éä»úÖÆÖ´ĞĞĞ§ÂÊ
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê02ÔÂ20ÈÕ ÏÂÎç21:59
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼šåå°„æœºåˆ¶æ‰§è¡Œæ•ˆç‡
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´02æœˆ20æ—¥ ä¸‹åˆ21:59
  *
  * @author csypc
  * @version 1.0
@@ -21,7 +21,7 @@ public class ReflectTest4 {
         }
 
         Long end = System.currentTimeMillis();
-        System.out.println("ÆÕÍ¨·½·¨Ö´ĞĞµÄÊ±¼ä£º"+(end-start));
+        System.out.println("æ™®é€šæ–¹æ³•æ‰§è¡Œçš„æ—¶é—´ï¼š"+(end-start));
     }
 
 
@@ -35,7 +35,7 @@ public class ReflectTest4 {
         }
 
         Long end = System.currentTimeMillis();
-        System.out.println("·´ÉäÖ´ĞĞµÄÊ±¼ä£º"+(end-start));
+        System.out.println("åå°„æ‰§è¡Œçš„æ—¶é—´ï¼š"+(end-start));
     }
 
     public static void test3() throws Exception {
@@ -43,18 +43,18 @@ public class ReflectTest4 {
 
         Long start = System.currentTimeMillis();
         Method method = Demo.class.getMethod("getName",null);
-        method.setAccessible(true);//ÉèÖÃÎª¿É·ÃÎÊµÄ£¬Ôò²»½øĞĞ°²È«¼ì²é£¬Ìá¸ßĞ§ÂÊ
+        method.setAccessible(true);//è®¾ç½®ä¸ºå¯è®¿é—®çš„ï¼Œåˆ™ä¸è¿›è¡Œå®‰å…¨æ£€æŸ¥ï¼Œæé«˜æ•ˆç‡
         for(int i = 1;i<=1000000000L;i++){
             method.invoke(demo,null);
         }
 
         Long end = System.currentTimeMillis();
-        System.out.println("Ìá¸ßĞ§ÂÊºóµÄ·´ÉäÖ´ĞĞµÄÊ±¼ä£º"+(end-start));
+        System.out.println("æé«˜æ•ˆç‡åçš„åå°„æ‰§è¡Œçš„æ—¶é—´ï¼š"+(end-start));
     }
 
     public static void main(String[] args) throws Exception{
-        //Ê¹ÓÃ·´Éä»úÖÆ¿ÉÒÔÁé»îµØ²Ù×÷·½·¨¡¢ÊôĞÔµÈ
-        //µ«ÊÇ»á½µµÍÔËĞĞĞ§ÂÊ£¬¿ÉÒÔ½«·ÃÎÊÉèÖÃsetAccessibleÎª¿É·ÃÎÊµÄ£¬²»×ö°²È«¼ì²é£¬¿ÉÌá¸ßĞ§ÂÊ
+        //ä½¿ç”¨åå°„æœºåˆ¶å¯ä»¥çµæ´»åœ°æ“ä½œæ–¹æ³•ã€å±æ€§ç­‰
+        //ä½†æ˜¯ä¼šé™ä½è¿è¡Œæ•ˆç‡ï¼Œå¯ä»¥å°†è®¿é—®è®¾ç½®setAccessibleä¸ºå¯è®¿é—®çš„ï¼Œä¸åšå®‰å…¨æ£€æŸ¥ï¼Œå¯æé«˜æ•ˆç‡
         test1();
         test2();
         test3();

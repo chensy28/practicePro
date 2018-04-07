@@ -5,32 +5,32 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º·şÎñÆ÷¶Ë
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ03ÈÕ ÏÂÎç17:13
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šæœåŠ¡å™¨ç«¯
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ03æ—¥ ä¸‹åˆ17:13
  *
  * @author csypc
  * @version 1.0
  */
 public class Server {
     public static void main(String[] args) throws IOException {
-        //´´½¨·şÎñÆ÷¶Ë£¬ÖÆ¶¨¶Ë¿Ú
+        //åˆ›å»ºæœåŠ¡å™¨ç«¯ï¼Œåˆ¶å®šç«¯å£
         ServerSocket serverSocket = new ServerSocket(8889);
 
-        //½ÓÊÕ¿Í»§¶ËÁ¬½Ó¡¢×èÈûÊ½µÄ£¨»ñÈ¡µ½Í¨ĞÅÍ¨µÀ£©
+        //æ¥æ”¶å®¢æˆ·ç«¯è¿æ¥ã€é˜»å¡å¼çš„ï¼ˆè·å–åˆ°é€šä¿¡é€šé“ï¼‰
         Socket socket = serverSocket.accept();
 
-        //½ÓÊÕÊı¾İ (¿Í»§¶ËÓÃÊ²Ã´Á÷Êä³öÊı¾İ£¬·şÎñÆ÷¶ËĞèÒªÓëÖ®¶ÔÓ¦)
+        //æ¥æ”¶æ•°æ® (å®¢æˆ·ç«¯ç”¨ä»€ä¹ˆæµè¾“å‡ºæ•°æ®ï¼ŒæœåŠ¡å™¨ç«¯éœ€è¦ä¸ä¹‹å¯¹åº”)
         DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
         DataInputStream dis = new DataInputStream(socket.getInputStream());
 
-        //Ñ­»·¶ÁÈ¡
+        //å¾ªç¯è¯»å–
         while(true) {
-            String msg = dis.readUTF();//×èÈûÊ½·½·¨£¬ÈôÃ»ÓĞ¶Áµ½Êı¾İ»á±¨Òì³£
-            System.out.println("·şÎñ¶Ë½ÓÊÕÊı¾İ" + msg);
+            String msg = dis.readUTF();//é˜»å¡å¼æ–¹æ³•ï¼Œè‹¥æ²¡æœ‰è¯»åˆ°æ•°æ®ä¼šæŠ¥å¼‚å¸¸
+            System.out.println("æœåŠ¡ç«¯æ¥æ”¶æ•°æ®" + msg);
 
-            //·¢ËÍÊı¾İ
+            //å‘é€æ•°æ®
             dos.writeUTF(msg);
             dos.flush();
         }

@@ -4,37 +4,37 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºsleepÄ£Äâµ¹¼ÆÊ±
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ09ÈÕ ÏÂÎç23:09
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šsleepæ¨¡æ‹Ÿå€’è®¡æ—¶
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ09æ—¥ ä¸‹åˆ23:09
  *
  * @author csypc
  * @version 1.0
  */
 public class ThreadSleep {
     public static void main(String[] args) throws InterruptedException {
-        /*//µ¹Êı10¸öÊı
+        /*//å€’æ•°10ä¸ªæ•°
         int num = 10;
         boolean flag= true;
         while(flag){
             System.out.println(num--);
-            //ÈÃµ±Ç°Ïß³ÌĞİÃß£¬²»ÊÍ·ÅËø
+            //è®©å½“å‰çº¿ç¨‹ä¼‘çœ ï¼Œä¸é‡Šæ”¾é”
             Thread.sleep(1000);
             if(num<=0){
                 break;
             }
         }*/
 
-        //µ¹¼ÆÊ±
+        //å€’è®¡æ—¶
         Date endTime = new Date(System.currentTimeMillis());
         Long end = endTime.getTime();
         while(true){
             System.out.println(new SimpleDateFormat("HH:mm:ss").format(endTime));
             Thread.sleep(1000);
-            //Ê±¼äµÄÏÂÒ»Ãë£¨¸üĞÂÊ±¼ä£©
+            //æ—¶é—´çš„ä¸‹ä¸€ç§’ï¼ˆæ›´æ–°æ—¶é—´ï¼‰
             endTime = new Date(endTime.getTime()-1000);
-            //¶¨ÒåÑ­»·µÄ±ß½ç
+            //å®šä¹‰å¾ªç¯çš„è¾¹ç•Œ
             if(end - 10*1000 > endTime.getTime()){
                    break;
             }

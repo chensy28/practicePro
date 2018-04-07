@@ -4,23 +4,23 @@ import java.io.*;
 import java.util.Date;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º·â×°ÏìÓ¦ĞÅÏ¢
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ08ÈÕ ÏÂÎç09:54
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šå°è£…å“åº”ä¿¡æ¯
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ08æ—¥ ä¸‹åˆ09:54
  *
  * @author csypc
  * @version 1.0
  */
 public class Response {
-    //ĞĞ½áÊø·ûÓë»Ø³µ·û
+    //è¡Œç»“æŸç¬¦ä¸å›è½¦ç¬¦
     public static String CRLF = "\r\n";
-    public static String BLANK = " ";//¿ÕĞĞ
+    public static String BLANK = " ";//ç©ºè¡Œ
 
-    //ÏìÓ¦Í·²¿ĞÅÏ¢
+    //å“åº”å¤´éƒ¨ä¿¡æ¯
     private StringBuilder headInfo;
 
-    //ÏìÓ¦ÕıÎÄ×Ö½ÚÊı
+    //å“åº”æ­£æ–‡å­—èŠ‚æ•°
     private int len;
 
     private OutputStream outputStream;
@@ -46,11 +46,11 @@ public class Response {
         this.len = len;
     }
 
-    //´´½¨ÏìÓ¦Í·ĞÅÏ¢
+    //åˆ›å»ºå“åº”å¤´ä¿¡æ¯
     public void createHead(int code){
-        //HttpĞ­Òé°æ±¾¡¢×´Ì¬´úÂë¡¢ÃèÊö
+        //Httpåè®®ç‰ˆæœ¬ã€çŠ¶æ€ä»£ç ã€æè¿°
         headInfo.append("HTTP/1.1").append(BLANK);
-        //×´Ì¬´úÂëÅĞ¶Ï
+        //çŠ¶æ€ä»£ç åˆ¤æ–­
         switch (code){
             case 200 :
                 headInfo.append(code).append("BLANK").append("ok").append(CRLF);;
@@ -62,29 +62,29 @@ public class Response {
                 headInfo.append(code).append("BLANK").append("Server error!").append(CRLF);;
                 break;
         }
-        //ÏìÓ¦Í·
+        //å“åº”å¤´
         headInfo.append("Server:csy").append(BLANK).append("Server/0.0.1").append(CRLF);
         headInfo.append("Date:").append(new Date()).append(CRLF);
-        //ÏìÓ¦µÄ¸ñÊ½
+        //å“åº”çš„æ ¼å¼
         headInfo.append("Context-type:text/html;charset-GBK").append(CRLF);
-        //ÏìÓ¦µÄ×Ö½ÚÊı
+        //å“åº”çš„å­—èŠ‚æ•°
         headInfo.append("Context-Length:").append(len).append(CRLF);
 
-        //ÏìÓ¦ÕıÎÄÇ°
+        //å“åº”æ­£æ–‡å‰
         headInfo.append(CRLF);
     }
 
 
-    //·¢ËÍĞÅÏ¢µ½¿Í»§¶Ë
+    //å‘é€ä¿¡æ¯åˆ°å®¢æˆ·ç«¯
     public void pushToClient(){
 
-        //Ğ´µ½Á÷ÖĞ
+        //å†™åˆ°æµä¸­
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream));
         try {
             writer.write(context.toString());
             writer.flush();
             close(writer,outputStream);
-            System.out.println("·â×°responseÏìÓ¦\n"+context.toString());
+            System.out.println("å°è£…responseå“åº”\n"+context.toString());
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -92,12 +92,12 @@ public class Response {
 
     }
 
-    //¹¹½¨ÕıÎÄ
+    //æ„å»ºæ­£æ–‡
     public void print(String info){
         this.context = headInfo.append(info);
     }
 
-    //¹Ø±ÕÁ÷
+    //å…³é—­æµ
     public void close(Closeable... io){
         for(Closeable temp : io){
             if(temp != null){

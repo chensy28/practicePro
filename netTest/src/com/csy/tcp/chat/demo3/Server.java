@@ -7,15 +7,15 @@ import java.util.*;
 
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ:ÁÄÌìÊÒ½øÈëÏÔÊ¾
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ03ÈÕ ÏÂÎç17:13
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°:èŠå¤©å®¤è¿›å…¥æ˜¾ç¤º
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ03æ—¥ ä¸‹åˆ17:13
  *
  * @author csypc
  * @version 1.0
  */
 public class Server {
-    //ÓÃÀ´¹ÜÀíËùÓĞµÄ¿Í»§¶Ë
+    //ç”¨æ¥ç®¡ç†æ‰€æœ‰çš„å®¢æˆ·ç«¯
     private List<MyChannel> all = new ArrayList<MyChannel>();
 
     public static void main(String[] args) throws IOException {
@@ -23,25 +23,25 @@ public class Server {
     }
 
     public void start() throws IOException {
-        //´´½¨·şÎñÆ÷¶Ë£¬ÖÆ¶¨¶Ë¿Ú
+        //åˆ›å»ºæœåŠ¡å™¨ç«¯ï¼Œåˆ¶å®šç«¯å£
         ServerSocket serverSocket = new ServerSocket(8889);
-        //Ñ­»·¶ÁÈ¡
+        //å¾ªç¯è¯»å–
         while(true) {
-            //½ÓÊÕ¿Í»§¶ËÁ¬½Ó¡¢×èÈûÊ½µÄ£¨»ñÈ¡µ½Í¨ĞÅÍ¨µÀ£©
+            //æ¥æ”¶å®¢æˆ·ç«¯è¿æ¥ã€é˜»å¡å¼çš„ï¼ˆè·å–åˆ°é€šä¿¡é€šé“ï¼‰
             Socket socket = serverSocket.accept();
             MyChannel myChannel = new MyChannel(socket);
             new Thread(myChannel).start();
-            all.add(myChannel);//¹ÜÀí¿Í»§¶Ë
+            all.add(myChannel);//ç®¡ç†å®¢æˆ·ç«¯
         }
     }
 
     /**
      *
-     * Ò»¸ö¿Í»§¶Ë£¬Ò»ÌõµÀÂ·
-     * 1.ÊäÈëÁ÷
-     * 2.Êä³öÁ÷
-     * 3.½ÓÊÕÊı¾İ
-     * 4.·¢ËÍÊı¾İ
+     * ä¸€ä¸ªå®¢æˆ·ç«¯ï¼Œä¸€æ¡é“è·¯
+     * 1.è¾“å…¥æµ
+     * 2.è¾“å‡ºæµ
+     * 3.æ¥æ”¶æ•°æ®
+     * 4.å‘é€æ•°æ®
      */
     private class MyChannel implements Runnable{
 
@@ -63,7 +63,7 @@ public class Server {
 
         }
 
-        //½ÓÊÕÊı¾İ
+        //æ¥æ”¶æ•°æ®
         public String receive(){
             String msg = "";
             try {
@@ -72,14 +72,14 @@ public class Server {
                 //e.printStackTrace();
                 isRunning = false;
                 CloseIOUtil.closeAll(dis);
-                all.remove(this);//³öÏÖÒì³££¬ÒÆ³ı×ÔÉí
+                all.remove(this);//å‡ºç°å¼‚å¸¸ï¼Œç§»é™¤è‡ªèº«
             }
             return msg;
         }
 
-        //·¢ËÍÊı¾İ
+        //å‘é€æ•°æ®
         public void send(String msg){
-            //ÈôÄÚÈİÎª¿Õ£¬Ôò²»·¢ËÍ
+            //è‹¥å†…å®¹ä¸ºç©ºï¼Œåˆ™ä¸å‘é€
             if(msg == null || msg.equals("")){
                 return ;
             }
@@ -90,11 +90,11 @@ public class Server {
                 //e.printStackTrace();
                 isRunning = false;
                 CloseIOUtil.closeAll(dos);
-                all.remove(this);//³öÏÖÒì³££¬ÒÆ³ı×ÔÉí
+                all.remove(this);//å‡ºç°å¼‚å¸¸ï¼Œç§»é™¤è‡ªèº«
             }
         }
 
-        //·¢ËÍ¸øÆäËü¿Í»§¶Ë
+        //å‘é€ç»™å…¶å®ƒå®¢æˆ·ç«¯
         public void sendOther(){
             String msg = receive();
             for(MyChannel other : all){
@@ -108,7 +108,7 @@ public class Server {
         @Override
         public void run() {
             while(isRunning){
-                sendOther();//×ª·¢¸øÆäËü¿Í»§¶Ë
+                sendOther();//è½¬å‘ç»™å…¶å®ƒå®¢æˆ·ç«¯
             }
         }
     }

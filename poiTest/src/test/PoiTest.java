@@ -19,59 +19,59 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.Workbook;
 
 public class PoiTest {
-    //Ê¹ÓÃPOI´´½¨excel¹¤×÷²¾
+    //ä½¿ç”¨POIåˆ›å»ºexcelå·¥ä½œç°¿
     public static void createWorkBook() throws IOException {
-        //´´½¨excel¹¤×÷²¾
+        //åˆ›å»ºexcelå·¥ä½œç°¿
         Workbook wb = new HSSFWorkbook();
-        //´´½¨µÚÒ»¸ösheet£¨Ò³£©£¬ÃüÃûÎª new sheet
+        //åˆ›å»ºç¬¬ä¸€ä¸ªsheetï¼ˆé¡µï¼‰ï¼Œå‘½åä¸º new sheet
         Sheet sheet = wb.createSheet("new sheet");
-        //Row ĞĞ
-        //Cell ·½¸ñ
-        // Row ºÍ Cell ¶¼ÊÇ´Ó0¿ªÊ¼¼ÆÊıµÄ
+        //Row è¡Œ
+        //Cell æ–¹æ ¼
+        // Row å’Œ Cell éƒ½æ˜¯ä»0å¼€å§‹è®¡æ•°çš„
 
-        // ´´½¨Ò»ĞĞ£¬ÔÚÒ³sheetÉÏ
+        // åˆ›å»ºä¸€è¡Œï¼Œåœ¨é¡µsheetä¸Š
         Row row = sheet.createRow((short) 0);
-        // ÔÚrowĞĞÉÏ´´½¨Ò»¸ö·½¸ñ
+        // åœ¨rowè¡Œä¸Šåˆ›å»ºä¸€ä¸ªæ–¹æ ¼
         Cell cell = row.createCell(0);
-        //ÉèÖÃ·½¸ñµÄÏÔÊ¾
+        //è®¾ç½®æ–¹æ ¼çš„æ˜¾ç¤º
         cell.setCellValue(1);
 
         // Or do it on one line.
         row.createCell(1).setCellValue(1.2);
-        row.createCell(2).setCellValue("This is a string ËÙ¶È·´À¡Á´½Ó");
+        row.createCell(2).setCellValue("This is a string é€Ÿåº¦åé¦ˆé“¾æ¥");
         row.createCell(3).setCellValue(true);
 
-        //´´½¨Ò»¸öÎÄ¼ş ÃüÃûÎªworkbook.xls
+        //åˆ›å»ºä¸€ä¸ªæ–‡ä»¶ å‘½åä¸ºworkbook.xls
         FileOutputStream fileOut = new FileOutputStream("workbook.xls");
-        // °ÑÉÏÃæ´´½¨µÄ¹¤×÷²¾Êä³öµ½ÎÄ¼şÖĞ
+        // æŠŠä¸Šé¢åˆ›å»ºçš„å·¥ä½œç°¿è¾“å‡ºåˆ°æ–‡ä»¶ä¸­
         wb.write(fileOut);
-        //¹Ø±ÕÊä³öÁ÷
+        //å…³é—­è¾“å‡ºæµ
         fileOut.close();
     }
 
-    //Ê¹ÓÃPOI¶ÁÈëexcel¹¤×÷²¾ÎÄ¼ş
+    //ä½¿ç”¨POIè¯»å…¥excelå·¥ä½œç°¿æ–‡ä»¶
     public static void readWorkBook() throws Exception {
-        // poi¶ÁÈ¡excel
-        //´´½¨Òª¶ÁÈëµÄÎÄ¼şµÄÊäÈëÁ÷
+        // poiè¯»å–excel
+        //åˆ›å»ºè¦è¯»å…¥çš„æ–‡ä»¶çš„è¾“å…¥æµ
         InputStream inp = new FileInputStream("workbook.xls");
 
-        //¸ù¾İÉÏÊö´´½¨µÄÊäÈëÁ÷ ´´½¨¹¤×÷²¾¶ÔÏó
+        //æ ¹æ®ä¸Šè¿°åˆ›å»ºçš„è¾“å…¥æµ åˆ›å»ºå·¥ä½œç°¿å¯¹è±¡
         Workbook wb = null;
                 //WorkbookFactory.create(inp);
-        //µÃµ½µÚÒ»Ò³ sheet
-        //Ò³SheetÊÇ´Ó0¿ªÊ¼Ë÷ÒıµÄ
+        //å¾—åˆ°ç¬¬ä¸€é¡µ sheet
+        //é¡µSheetæ˜¯ä»0å¼€å§‹ç´¢å¼•çš„
         Sheet sheet = wb.getSheetAt(0);
-        //ÀûÓÃforeachÑ­»· ±éÀúsheetÖĞµÄËùÓĞĞĞ
+        //åˆ©ç”¨foreachå¾ªç¯ éå†sheetä¸­çš„æ‰€æœ‰è¡Œ
         for (Row row : sheet) {
-            //±éÀúrowÖĞµÄËùÓĞ·½¸ñ
+            //éå†rowä¸­çš„æ‰€æœ‰æ–¹æ ¼
             for (Cell cell : row) {
-                //Êä³ö·½¸ñÖĞµÄÄÚÈİ£¬ÒÔ¿Õ¸ñ¼ä¸ô
+                //è¾“å‡ºæ–¹æ ¼ä¸­çš„å†…å®¹ï¼Œä»¥ç©ºæ ¼é—´éš”
                 System.out.print(cell.toString() + "  ");
             }
-            //Ã¿Ò»¸öĞĞÊä³öÖ®ºó»»ĞĞ
+            //æ¯ä¸€ä¸ªè¡Œè¾“å‡ºä¹‹åæ¢è¡Œ
             System.out.println();
         }
-        //¹Ø±ÕÊäÈëÁ÷
+        //å…³é—­è¾“å…¥æµ
         inp.close();
     }
 

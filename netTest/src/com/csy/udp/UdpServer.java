@@ -5,17 +5,17 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºUDP ·şÎñÆ÷¶Ë
- *         1£©´´½¨·şÎñÆ÷+¶Ë¿Ú
- *         2)×¼±¸½ÓÊÕµÄÈİÆ÷
- *         3£©·â×°³É°ü
- *         4)½ÓÊÕÊı¾İ
- *         5£©·ÖÎöÊı¾İ
- *         6£©ÊÍ·Å×ÊÔ´
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šUDP æœåŠ¡å™¨ç«¯
+ *         1ï¼‰åˆ›å»ºæœåŠ¡å™¨+ç«¯å£
+ *         2)å‡†å¤‡æ¥æ”¶çš„å®¹å™¨
+ *         3ï¼‰å°è£…æˆåŒ…
+ *         4)æ¥æ”¶æ•°æ®
+ *         5ï¼‰åˆ†ææ•°æ®
+ *         6ï¼‰é‡Šæ”¾èµ„æº
  *
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ31ÈÕ ÏÂÎç21:00
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ31æ—¥ ä¸‹åˆ21:00
  *
  * @author csypc
  * @version 1.0
@@ -23,19 +23,19 @@ import java.net.DatagramSocket;
 public class UdpServer {
     public static void main(String[] args) throws IOException {
 
-        //´´½¨·şÎñÆ÷+¶Ë¿Ú
+        //åˆ›å»ºæœåŠ¡å™¨+ç«¯å£
         DatagramSocket server = new DatagramSocket(8888);
-        //×¼±¸½ÓÊÕµÄÈİÆ÷
+        //å‡†å¤‡æ¥æ”¶çš„å®¹å™¨
         byte [] buf = new byte[1024];
-        //·â×°³É°ü
+        //å°è£…æˆåŒ…
         DatagramPacket packet = new DatagramPacket(buf,buf.length);
-        //½ÓÊÕÊı¾İ
+        //æ¥æ”¶æ•°æ®
         server.receive(packet);
-        //·ÖÎöÊı¾İ
+        //åˆ†ææ•°æ®
         byte [] datas = packet.getData();
         int len = datas.length;
         System.out.println(new String(datas,0,len));
-        //ÊÍ·Å×ÊÔ´
+        //é‡Šæ”¾èµ„æº
         server.close();
     }
 }

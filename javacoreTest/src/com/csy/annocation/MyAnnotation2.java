@@ -4,10 +4,10 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê01ÔÂ27ÈÕ ÏÂÎç23:59
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´01æœˆ27æ—¥ ä¸‹åˆ23:59
  *
  * @author csypc
  * @version 1.0

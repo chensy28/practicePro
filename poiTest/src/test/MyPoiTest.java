@@ -22,15 +22,15 @@ import com.jacob.activeX.ActiveXDispatchEvents;
 import com.jacob.com.ComThread;
 
 public class MyPoiTest {
-    //ʹ��POI����excel������
+    //使锟斤拷POI锟斤拷锟斤拷excel锟斤拷锟斤拷锟斤拷
     public static void createWorkBook() throws IOException {
-        //����excel������
+        //锟斤拷锟斤拷excel锟斤拷锟斤拷锟斤拷
         Workbook wb = new HSSFWorkbook();
-        //������һ��sheet��ҳ��������Ϊ new sheet
+        //锟斤拷锟斤拷锟斤拷一锟斤拷sheet锟斤拷页锟斤拷锟斤拷锟斤拷锟斤拷为 new sheet
         Sheet sheet = wb.createSheet("new sheet");
-        //Row ��
-        //Cell ����
-        // Row �� Cell ���Ǵ�0��ʼ������
+        //Row 锟斤拷
+        //Cell 锟斤拷锟斤拷
+        // Row 锟斤拷 Cell 锟斤拷锟角达拷0锟斤拷始锟斤拷锟斤拷锟斤拷
         Row row1 = sheet.createRow(4);
         Cell var1 = row1.createCell(6);
         var1.setCellValue("c");
@@ -43,38 +43,38 @@ public class MyPoiTest {
         Cell var3 = row3.createCell(8);
         var3.setCellValue("y");
 
-        //����һ���ļ� ����Ϊworkbook.xls
+        //锟斤拷锟斤拷一锟斤拷锟侥硷拷 锟斤拷锟斤拷为workbook.xls
         FileOutputStream fileOut = new FileOutputStream("csyworkbook.xls");
-        // �����洴���Ĺ�����������ļ���?
+        // 锟斤拷锟斤拷锟芥创锟斤拷锟侥癸拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷募锟斤拷锟?
         wb.write(fileOut);
-        //�ر������?
+        //锟截憋拷锟斤拷锟斤拷锟?
         fileOut.close();
     }
 
-    //ʹ��POI����excel�������ļ�
+    //使锟斤拷POI锟斤拷锟斤拷excel锟斤拷锟斤拷锟斤拷锟侥硷拷
     public static void readWorkBook() throws Exception {
-        // poi��ȡexcel
-        //����Ҫ������ļ���������?
+        // poi锟斤拷取excel
+        //锟斤拷锟斤拷要锟斤拷锟斤拷锟斤拷募锟斤拷锟斤拷锟斤拷锟斤拷锟?
         InputStream inp = new FileInputStream("csyworkbook.xls");
 
-        //�������������������� ��������������
+        //锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
         Workbook wb = null;
                 //WorkbookFactory.create(inp);
-        //�õ���һҳ sheet
-        //ҳSheet�Ǵ�0��ʼ������
+        //锟矫碉拷锟斤拷一页 sheet
+        //页Sheet锟角达拷0锟斤拷始锟斤拷锟斤拷锟斤拷
         Sheet sheet = wb.getSheetAt(0);
         System.out.println(sheet.getRow(9).getCell(4));
-        //����foreachѭ�� ����sheet�е�������
+        //锟斤拷锟斤拷foreach循锟斤拷 锟斤拷锟斤拷sheet锟叫碉拷锟斤拷锟斤拷锟斤拷
        /* for (Row row : sheet) {
-            //����row�е����з���
+            //锟斤拷锟斤拷row锟叫碉拷锟斤拷锟叫凤拷锟斤拷
             for (Cell cell : row) {
-                //��������е����ݣ��Կո���?
+                //锟斤拷锟斤拷锟斤拷锟斤拷械锟斤拷锟斤拷荩锟斤拷钥崭锟斤拷锟?
                 System.out.print(cell.toString() + "  ");
             }
-            //ÿһ�������֮����?
+            //每一锟斤拷锟斤拷锟斤拷锟街拷锟斤拷锟?
             System.out.println();
         }*/
-        //�ر�������
+        //锟截憋拷锟斤拷锟斤拷锟斤拷
         inp.close();
     }
 

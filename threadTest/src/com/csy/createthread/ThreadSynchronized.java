@@ -1,10 +1,10 @@
 package com.csy.createthread;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºÏß³ÌÍ¬²½ synchronized
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ10ÈÕ ÏÂÎç08:27
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šçº¿ç¨‹åŒæ­¥ synchronized
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ10æ—¥ ä¸‹åˆ08:27
  *
  * @author csypc
  * @version 1.0
@@ -12,16 +12,16 @@ package com.csy.createthread;
 public class ThreadSynchronized {
 
     /**
-     * Í¬²½£º²¢·¢   µ±¶à¸öÏß³Ì·ÃÎÊÍ¬Ò»¸ö×ÊÔ´Ê±£¬Èô×ÊÔ´Ê±°²È«µÄ£¬Ôò³ÆÎªÏß³Ì°²È«
-     * Ê¹ÓÃÏß³Ì°²È«£¬Ê±¼ä¾Í»á»¨µÄ¶àµã£¬Ğ§ÂÊ»áµÍµã
+     * åŒæ­¥ï¼šå¹¶å‘   å½“å¤šä¸ªçº¿ç¨‹è®¿é—®åŒä¸€ä¸ªèµ„æºæ—¶ï¼Œè‹¥èµ„æºæ—¶å®‰å…¨çš„ï¼Œåˆ™ç§°ä¸ºçº¿ç¨‹å®‰å…¨
+     * ä½¿ç”¨çº¿ç¨‹å®‰å…¨ï¼Œæ—¶é—´å°±ä¼šèŠ±çš„å¤šç‚¹ï¼Œæ•ˆç‡ä¼šä½ç‚¹
      * @param args
      */
     public static void main(String[] args) {
         WebTicket web = new WebTicket();
-        //¶à¸öÏß³Ì¹²Ïí×ÊÔ´
-        Thread thread1 = new Thread(web,"»ÆÅ£¼×");
-        Thread thread2 = new Thread(web,"»ÆÅ£ÒÑ");
-        Thread thread3 = new Thread(web,"Â·ÈË±û");
+        //å¤šä¸ªçº¿ç¨‹å…±äº«èµ„æº
+        Thread thread1 = new Thread(web,"é»„ç‰›ç”²");
+        Thread thread2 = new Thread(web,"é»„ç‰›å·²");
+        Thread thread3 = new Thread(web,"è·¯äººä¸™");
 
         thread1.start();
         thread2.start();
@@ -34,28 +34,28 @@ class WebTicket implements Runnable{
     int num = 10 ;
 
     @Override
-    public  void run() {  //¼ÓÉÏsynchronized¶Ô·½·¨½øĞĞ¼ÓËø
+    public  void run() {  //åŠ ä¸Šsynchronizedå¯¹æ–¹æ³•è¿›è¡ŒåŠ é”
        // test1();
         //test2();
         test3();
     }
 
-    //Í¬²½·½·¨
+    //åŒæ­¥æ–¹æ³•
     public synchronized void test1(){
         while(true){
             if(num <= 0){
                 break;
             }
             try {
-                Thread.sleep(500); //Ä£ÄâÍøÂçÑÓÊ±
+                Thread.sleep(500); //æ¨¡æ‹Ÿç½‘ç»œå»¶æ—¶
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(Thread.currentThread().getName()+"ÇÀµ½ÁË£º»¹Ê£Óà"+num--+"Æ±");
+            System.out.println(Thread.currentThread().getName()+"æŠ¢åˆ°äº†ï¼šè¿˜å‰©ä½™"+num--+"ç¥¨");
         }
     }
 
-    //Í¬²½¿é  synchronized(ÒıÓÃÀàĞÍ | this | Àà.class)
+    //åŒæ­¥å—  synchronized(å¼•ç”¨ç±»å‹ | this | ç±».class)
     public void test2(){
         synchronized(this) {
             while (true) {
@@ -63,16 +63,16 @@ class WebTicket implements Runnable{
                     break;
                 }
                 try {
-                    Thread.sleep(500); //Ä£ÄâÍøÂçÑÓÊ±
+                    Thread.sleep(500); //æ¨¡æ‹Ÿç½‘ç»œå»¶æ—¶
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println(Thread.currentThread().getName() + "ÇÀµ½ÁË£º»¹Ê£Óà" + num-- + "Æ±");
+                System.out.println(Thread.currentThread().getName() + "æŠ¢åˆ°äº†ï¼šè¿˜å‰©ä½™" + num-- + "ç¥¨");
             }
         }
     }
 
-    //Ëø¶¨·¶Î§²»ÕıÈ·£¬Ïß³Ì²»°²È«
+    //é”å®šèŒƒå›´ä¸æ­£ç¡®ï¼Œçº¿ç¨‹ä¸å®‰å…¨
     public void test3(){
 
             while (true) {
@@ -80,14 +80,14 @@ class WebTicket implements Runnable{
                 if (num <= 0) {
                     break;
                 }
-                //a,b,c = 1  Ïß³Ì²»¶ÏµØÇÀ¶á×ÊÔ´£¬Ö±µ½ÇÀµ½ÎªÖ¹
+                //a,b,c = 1  çº¿ç¨‹ä¸æ–­åœ°æŠ¢å¤ºèµ„æºï¼Œç›´åˆ°æŠ¢åˆ°ä¸ºæ­¢
                 synchronized(this) {
                 try {
-                    Thread.sleep(500); //Ä£ÄâÍøÂçÑÓÊ±
+                    Thread.sleep(500); //æ¨¡æ‹Ÿç½‘ç»œå»¶æ—¶
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println(Thread.currentThread().getName() + "ÇÀµ½ÁË£º»¹Ê£Óà" + num-- + "Æ±");
+                System.out.println(Thread.currentThread().getName() + "æŠ¢åˆ°äº†ï¼šè¿˜å‰©ä½™" + num-- + "ç¥¨");
             }
         }
     }

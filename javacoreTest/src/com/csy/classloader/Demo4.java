@@ -1,10 +1,10 @@
 package com.csy.classloader;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ05ÈÕ ÏÂÎç07:40
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ05æ—¥ ä¸‹åˆ07:40
  *
  * @author csypc
  * @version 1.0
@@ -12,12 +12,12 @@ package com.csy.classloader;
 public class Demo4 {
     public static void main(String[] args) throws Exception{
         int a = 3;
-       /* System.out.println(Integer.toHexString(a | 0xff));  //½øĞĞ»òÔËËã£¬·µ»Ø16½øÖÆ±íÊ¾µÄ×Ö·û´®
-        System.out.println(Integer.toBinaryString(a & 0xff));//½øĞĞÓëÔËËã
-        System.out.println(Integer.toBinaryString(a ^ 0xff));//½øĞĞÈ¡·´ÔËËã*/
+       /* System.out.println(Integer.toHexString(a | 0xff));  //è¿›è¡Œæˆ–è¿ç®—ï¼Œè¿”å›16è¿›åˆ¶è¡¨ç¤ºçš„å­—ç¬¦ä¸²
+        System.out.println(Integer.toBinaryString(a & 0xff));//è¿›è¡Œä¸è¿ç®—
+        System.out.println(Integer.toBinaryString(a ^ 0xff));//è¿›è¡Œå–åè¿ç®—*/
 
-        //¼ÓÃÜºó³öÏÖjava.lang.ClassFormatError: Incompatible magic value£¬ÒòÎªclass½á¹¹¸Ä±äÁË£¬ËùÒÔĞèÒª½âÃÜ
-        //Àà¼ÓÔØ°´Ô­À´µÄ¹æÔò¼ÓÔØclass,class¼ÓÃÜºó¸ñÊ½±äÁË£¬ËùÒÔ¼ÓÔØ²»ÁË
+        //åŠ å¯†åå‡ºç°java.lang.ClassFormatError: Incompatible magic valueï¼Œå› ä¸ºclassç»“æ„æ”¹å˜äº†ï¼Œæ‰€ä»¥éœ€è¦è§£å¯†
+        //ç±»åŠ è½½æŒ‰åŸæ¥çš„è§„åˆ™åŠ è½½class,classåŠ å¯†åæ ¼å¼å˜äº†ï¼Œæ‰€ä»¥åŠ è½½ä¸äº†
       /*  FileSytemLoader loader = new FileSytemLoader("H:/myjavatest");
         Class<?> c = loader.findClass("com.csy.temp.HelloWorld");
         System.out.println(c.hashCode());*/

@@ -1,26 +1,26 @@
 package com.csy.classloader;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ04ÈÕ ÏÂÎç00:23
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ04æ—¥ ä¸‹åˆ00:23
  *
  * @author csypc
  * @version 1.0
  */
 public class Demo2 {
     public static void main(String[] args) {
-        //AppClassLoader ÏµÍ³Àà¼ÓÔØÆ÷
+        //AppClassLoader ç³»ç»Ÿç±»åŠ è½½å™¨
         System.out.println(ClassLoader.getSystemClassLoader());
-        //ExtClassLoader À©Õ¹Àà¼ÓÔØÆ÷
+        //ExtClassLoader æ‰©å±•ç±»åŠ è½½å™¨
         System.out.println(ClassLoader.getSystemClassLoader().getParent());
-        //Òıµ¼Àà¼ÓÔØÆ÷£¬ÊÇÔ­Éú´úÂëÊµÏÖµÄ£¬²¢²»¼Ì³ĞClassLoader
+        //å¼•å¯¼ç±»åŠ è½½å™¨ï¼Œæ˜¯åŸç”Ÿä»£ç å®ç°çš„ï¼Œå¹¶ä¸ç»§æ‰¿ClassLoader
         System.out.println(ClassLoader.getSystemClassLoader().getParent().getParent());
 
-        //Ë«Ç×Î¯ÅÉ»úÖÆ£ºµ±½Óµ½Àà¼ÓÔØµÄÈÎÎñÊ±£¬¼ÓÔØÆ÷Ê×ÏÈ½«¼ÓÔØÈÎÎñÎ¯ÅÉ¸ø¸¸¼ÓÔØÆ÷£¬ÒÀ´Î×·Ë·£¬Ö±µ½Ò¯Ò¯×î¸ß±²µÄ¡£
-        //Èç¹û¸¸¼ÓÔØÆ÷ÄÜ¼ÓÔØ£¬¾ÍÓÉ¸¸¼ÓÔØÆ÷Ö´ĞĞ£¬·ñÔòÔÙÓÉµ±Ç°¼ÓÔØÆ÷¼ÓÔØ¡£
-        //Ë«Ç×Î¯ÅÉ»úÖÆÎªÁË±£Ö¤javaºËĞÄ¿âµÄ°²È«
+        //åŒäº²å§”æ´¾æœºåˆ¶ï¼šå½“æ¥åˆ°ç±»åŠ è½½çš„ä»»åŠ¡æ—¶ï¼ŒåŠ è½½å™¨é¦–å…ˆå°†åŠ è½½ä»»åŠ¡å§”æ´¾ç»™çˆ¶åŠ è½½å™¨ï¼Œä¾æ¬¡è¿½æœ”ï¼Œç›´åˆ°çˆ·çˆ·æœ€é«˜è¾ˆçš„ã€‚
+        //å¦‚æœçˆ¶åŠ è½½å™¨èƒ½åŠ è½½ï¼Œå°±ç”±çˆ¶åŠ è½½å™¨æ‰§è¡Œï¼Œå¦åˆ™å†ç”±å½“å‰åŠ è½½å™¨åŠ è½½ã€‚
+        //åŒäº²å§”æ´¾æœºåˆ¶ä¸ºäº†ä¿è¯javaæ ¸å¿ƒåº“çš„å®‰å…¨
         System.out.println("------------------------");
         String str = "yyysss";
         System.out.println(str.getClass().getClassLoader());

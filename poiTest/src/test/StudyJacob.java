@@ -22,28 +22,28 @@ import java.lang.reflect.Method;
 public class StudyJacob {
     public static void main(String[] args) {
 
-        ComThread.InitSTA();// ³õÊ¼»¯comµÄÏß³Ì£¬·Ç³£ÖØÒª£¡£¡Ê¹ÓÃ½áÊøºóÒªµ÷ÓÃ realease·½·¨
+        ComThread.InitSTA();// åˆå§‹åŒ–comçš„çº¿ç¨‹ï¼Œéå¸¸é‡è¦ï¼ï¼ä½¿ç”¨ç»“æŸåè¦è°ƒç”¨ realeaseæ–¹æ³•
         ActiveXComponent objWord = new ActiveXComponent("Word.Application");
         Dispatch wordObject = (Dispatch) objWord.getObject();
         //Create a Dispatch Parameter to show the document that is opened
-        Dispatch.put((Dispatch) wordObject, "Visible", new Variant(true));// new Variant(true)±íÊ¾wordÓ¦ÓÃ³ÌĞò¿É¼û
+        Dispatch.put((Dispatch) wordObject, "Visible", new Variant(true));// new Variant(true)è¡¨ç¤ºwordåº”ç”¨ç¨‹åºå¯è§
         //Instantiate the Documents Property
-        Dispatch documents = objWord.getProperty("Documents").toDispatch(); //documents±íÊ¾wordµÄËùÓĞÎÄµµ´°¿Ú£¬£¨wordÊÇ¶àÎÄµµÓ¦ÓÃ³ÌĞò£©
+        Dispatch documents = objWord.getProperty("Documents").toDispatch(); //documentsè¡¨ç¤ºwordçš„æ‰€æœ‰æ–‡æ¡£çª—å£ï¼Œï¼ˆwordæ˜¯å¤šæ–‡æ¡£åº”ç”¨ç¨‹åºï¼‰
         //Add a new word document, Current Active Document
-        Dispatch document = Dispatch.call(documents, "Add").toDispatch(); // Ê¹ÓÃAddÃüÁî´´½¨Ò»¸öĞÂÎÄµµ£¬ÓÃOpenÃüÁî¿ÉÒÔ´ò¿ªÒ»¸öÏÖÓĞÎÄµµ
-        Dispatch wordContent = Dispatch.get(document, "Content").toDispatch(); // È¡µÃwordÎÄ¼şµÄÄÚÈİ
-        Dispatch.call(wordContent, "InsertAfter", "ÕâÀïÊÇÒ»¸ö¶ÎÂäµÄÄÚÈİ");//²åÈëÒ»¸ö¶ÎÂä
-        Dispatch.call(wordContent, "InsertAfter", "sdfsdÊÇÒ»¸ö¶Îfdsf");//
-        Dispatch paragraphs = Dispatch.get(wordContent, "Paragraphs").toDispatch(); // ËùÓĞ¶ÎÂä
-        int paragraphCount = Dispatch.get(paragraphs, "Count").toInt(); // Ò»¹²µÄ¶ÎÂäÊı
-        // ÕÒµ½¸ÕÊäÈëµÄ¶ÎÂä£¬ÉèÖÃ¸ñÊ½
-        Dispatch lastParagraph = Dispatch.call(paragraphs, "Item", new Variant(paragraphCount)).toDispatch(); // ×îºóÒ»¶Î
+        Dispatch document = Dispatch.call(documents, "Add").toDispatch(); // ä½¿ç”¨Addå‘½ä»¤åˆ›å»ºä¸€ä¸ªæ–°æ–‡æ¡£ï¼Œç”¨Openå‘½ä»¤å¯ä»¥æ‰“å¼€ä¸€ä¸ªç°æœ‰æ–‡æ¡£
+        Dispatch wordContent = Dispatch.get(document, "Content").toDispatch(); // å–å¾—wordæ–‡ä»¶çš„å†…å®¹
+        Dispatch.call(wordContent, "InsertAfter", "è¿™é‡Œæ˜¯ä¸€ä¸ªæ®µè½çš„å†…å®¹");//æ’å…¥ä¸€ä¸ªæ®µè½
+        Dispatch.call(wordContent, "InsertAfter", "sdfsdæ˜¯ä¸€ä¸ªæ®µfdsf");//
+        Dispatch paragraphs = Dispatch.get(wordContent, "Paragraphs").toDispatch(); // æ‰€æœ‰æ®µè½
+        int paragraphCount = Dispatch.get(paragraphs, "Count").toInt(); // ä¸€å…±çš„æ®µè½æ•°
+        // æ‰¾åˆ°åˆšè¾“å…¥çš„æ®µè½ï¼Œè®¾ç½®æ ¼å¼
+        Dispatch lastParagraph = Dispatch.call(paragraphs, "Item", new Variant(paragraphCount)).toDispatch(); // æœ€åä¸€æ®µ
         Dispatch lastParagraphRange = Dispatch.get(lastParagraph, "Range"). toDispatch();
         Dispatch font = Dispatch.get(lastParagraphRange, "Font").toDispatch();
-        Dispatch.put(font, "Bold", new Variant(true)); // ÉèÖÃÎªºÚÌå
-        Dispatch.put(font, "Italic", new Variant(true)); // ÉèÖÃÎªĞ±Ìå
-        Dispatch.put(font, "Name", new Variant("ËÎÌå")); //
-        Dispatch.put(font, "Size", new Variant(12)); //Ğ¡ËÄ
+        Dispatch.put(font, "Bold", new Variant(true)); // è®¾ç½®ä¸ºé»‘ä½“
+        Dispatch.put(font, "Italic", new Variant(true)); // è®¾ç½®ä¸ºæ–œä½“
+        Dispatch.put(font, "Name", new Variant("å®‹ä½“")); //
+        Dispatch.put(font, "Size", new Variant(12)); //å°å››
 
        // Dispatch button = Dispatch.get(document,"ActiveDocument").getDispatch();
        // button.put(button,"CheckBox",new Variant(true));
@@ -71,8 +71,8 @@ public class StudyJacob {
 
         }*/
 
-        //Dispatch.call(document, "SaveAs", new Variant("C:/abc.doc")); // ±£´æÒ»¸öĞÂÎÄµµ
-        System.out.print("·¢¶àÉÙ¶àÉÙ·Ö·ÖÀà");
-        ComThread.Release();//ÊÍ·ÅcomÏß³Ì¡£¸ù¾İjacobµÄ°ïÖúÎÄµµ£¬comµÄÏß³Ì»ØÊÕ²»ÓÉjavaµÄÀ¬»ø»ØÊÕÆ÷´¦Àí
+        //Dispatch.call(document, "SaveAs", new Variant("C:/abc.doc")); // ä¿å­˜ä¸€ä¸ªæ–°æ–‡æ¡£
+        System.out.print("å‘å¤šå°‘å¤šå°‘åˆ†åˆ†ç±»");
+        ComThread.Release();//é‡Šæ”¾comçº¿ç¨‹ã€‚æ ¹æ®jacobçš„å¸®åŠ©æ–‡æ¡£ï¼Œcomçš„çº¿ç¨‹å›æ”¶ä¸ç”±javaçš„åƒåœ¾å›æ”¶å™¨å¤„ç†
     }
 }

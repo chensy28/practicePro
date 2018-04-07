@@ -2,10 +2,10 @@ package com.csy.http.perfect;
 
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºµÇÂ¼servlet
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ12ÈÕ ÏÂÎç22:58
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šç™»å½•servlet
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ12æ—¥ ä¸‹åˆ22:58
  *
  * @author csypc
  * @version 1.0
@@ -15,7 +15,7 @@ public class LoginServlet extends Servlet {
     @Override
     public void doGet(Request request, Response response) {
         response.createHead(response.getCode());
-        String context = "<html><head><title>µÇÂ¼Ò³Ãæ</title></head><body>µÇÂ¼³É¹¦</body></html>";
+        String context = "<html><head><title>ç™»å½•é¡µé¢</title></head><body>ç™»å½•æˆåŠŸ</body></html>";
         response.print(context);
     }
 

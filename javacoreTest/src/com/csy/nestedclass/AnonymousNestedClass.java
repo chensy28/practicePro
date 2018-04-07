@@ -1,17 +1,17 @@
 package com.csy.nestedclass;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºÄäÃûneibulei
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ06ÈÕ ÏÂÎç11:51
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šåŒ¿åneibulei
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ06æ—¥ ä¸‹åˆ11:51
  *
  * @author csypc
  * @version 1.0
  */
 public class AnonymousNestedClass {
 
-     //½Ó¿ÚÊ½
+     //æ¥å£å¼
      Runnable runnable = new Runnable() {
             @Override
             public void run() {
@@ -19,22 +19,22 @@ public class AnonymousNestedClass {
             }
      };
 
-    //¼Ì³ĞÊ½
+    //ç»§æ‰¿å¼
     Car car = new Car(){
       @Override
       public void run(){
           run();
-          System.out.println("aaa×ÓÀàÆû³µÔÚÅÜ£¡");
+          System.out.println("aaaå­ç±»æ±½è½¦åœ¨è·‘ï¼");
       }
     };
 
-    //²ÎÊıÊ½
+    //å‚æ•°å¼
     public void test(Car car){
          car.run();
     }
 
 
-    //²âÊÔ
+    //æµ‹è¯•
     public static void main(String[] args) {
         AnonymousNestedClass clazz = new AnonymousNestedClass();
         clazz.test(new Car(){});
@@ -45,6 +45,6 @@ public class AnonymousNestedClass {
 
 class Car{
     public void run(){
-        System.out.println("sssÆû³µÔÚÅÜ£¡");
+        System.out.println("sssæ±½è½¦åœ¨è·‘ï¼");
     }
 }

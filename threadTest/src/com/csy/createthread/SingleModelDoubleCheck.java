@@ -1,10 +1,10 @@
 package com.csy.createthread;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£ºµ¥ÀıÄ£Ê½ Ë«ÖØ¼ì²é
- * ÀàÃèÊö£ºÔÚ¶àÏß³ÌµÄÊ±ºò£¬´´½¨µÄ¶ÔÏó¿ÉÄÜ²»Ò»Ñù£¬ËùÒÔĞèÒªÍ¬²½´¦Àí
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ10ÈÕ ÏÂÎç22:50
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼šå•ä¾‹æ¨¡å¼ åŒé‡æ£€æŸ¥
+ * ç±»æè¿°ï¼šåœ¨å¤šçº¿ç¨‹çš„æ—¶å€™ï¼Œåˆ›å»ºçš„å¯¹è±¡å¯èƒ½ä¸ä¸€æ ·ï¼Œæ‰€ä»¥éœ€è¦åŒæ­¥å¤„ç†
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ10æ—¥ ä¸‹åˆ22:50
  *
  * @author csypc
  * @version 1.0
@@ -16,7 +16,7 @@ public class SingleModelDoubleCheck {
         SingletonThread thread2 = new SingletonThread();
         SingletonThread thread3 = new SingletonThread();
 
-        //ÆôÓÃ¶à¸öÏß³Ì
+        //å¯ç”¨å¤šä¸ªçº¿ç¨‹
         thread1.start();
         thread2.start();
         thread3.start();
@@ -34,29 +34,29 @@ class SingletonThread extends Thread{
             e.printStackTrace();
         }
 
-        //Èô²»½øĞĞÍ¬²½´¦Àí£¬´´½¨µÄ¶ÔÏó¿ÉÄÜ²»Ò»Ñù
-        System.out.println("´´½¨µÄ¶ÔÏó1£º"+SingleModel2.getInstance().hashCode());
-        System.out.println("´´½¨µÄ¶ÔÏó2£º"+SingleModel2.getInstance().hashCode());
-        System.out.println("´´½¨µÄ¶ÔÏó3£º"+SingleModel2.getInstance().hashCode());
+        //è‹¥ä¸è¿›è¡ŒåŒæ­¥å¤„ç†ï¼Œåˆ›å»ºçš„å¯¹è±¡å¯èƒ½ä¸ä¸€æ ·
+        System.out.println("åˆ›å»ºçš„å¯¹è±¡1ï¼š"+SingleModel2.getInstance().hashCode());
+        System.out.println("åˆ›å»ºçš„å¯¹è±¡2ï¼š"+SingleModel2.getInstance().hashCode());
+        System.out.println("åˆ›å»ºçš„å¯¹è±¡3ï¼š"+SingleModel2.getInstance().hashCode());
     }
 }
 
 class SingleModel2 {
 
-    //ÉùÃ÷Ò»¸öË½ÓĞµÄ¾²Ì¬±äÁ¿
+    //å£°æ˜ä¸€ä¸ªç§æœ‰çš„é™æ€å˜é‡
     private static SingleModel2 singleModel2 = null;
 
-    //¹¹ÔìÆ÷Ë½ÓĞ»¯£¬±ÜÃâÍâ²¿Ö±½Ó´´½¨¶ÔÏó
+    //æ„é€ å™¨ç§æœ‰åŒ–ï¼Œé¿å…å¤–éƒ¨ç›´æ¥åˆ›å»ºå¯¹è±¡
     private SingleModel2() {
 
     }
 
-    //´´½¨Ò»¸ö¹«ÓĞµÄ·½·¨·ÃÎÊ±äÁ¿£¬Èç¹û±äÁ¿Ã»ÓĞ¶ÔÏó£¬Ôò´´½¨¶ÔÏó
-    public /*synchronized */ static SingleModel2 getInstance() {           //synchronized½øĞĞÍ¬²½Ê±£¬ĞèÒª¿¼ÂÇ·¶Î§ÒÔ¼°Ğ§ÂÊ
+    //åˆ›å»ºä¸€ä¸ªå…¬æœ‰çš„æ–¹æ³•è®¿é—®å˜é‡ï¼Œå¦‚æœå˜é‡æ²¡æœ‰å¯¹è±¡ï¼Œåˆ™åˆ›å»ºå¯¹è±¡
+    public /*synchronized */ static SingleModel2 getInstance() {           //synchronizedè¿›è¡ŒåŒæ­¥æ—¶ï¼Œéœ€è¦è€ƒè™‘èŒƒå›´ä»¥åŠæ•ˆç‡
 
-        //Ë«ÖØcheck,Ìá¸ßĞ§ÂÊ
+        //åŒé‡check,æé«˜æ•ˆç‡
         if(null == singleModel2) {
-            //a b c ¹²Í¬µ½´Ë
+            //a b c å…±åŒåˆ°æ­¤
             synchronized (SingleModel2.class) {
                 if (null == singleModel2) {
                     singleModel2 = new SingleModel2();

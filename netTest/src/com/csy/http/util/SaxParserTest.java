@@ -10,31 +10,31 @@ import java.io.InputStream;
 import java.util.*;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºSAXParser»ùÓÚÊÂ¼şµÄ½âÎöÆ÷£¬ÖğĞĞ½âÎö
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ13ÈÕ ÏÂÎç21:53
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šSAXParseråŸºäºäº‹ä»¶çš„è§£æå™¨ï¼Œé€è¡Œè§£æ
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ13æ—¥ ä¸‹åˆ21:53
  *
  * @author csypc
  * @version 1.0
  */
 public class SaxParserTest {
     public static void main(String[] args) throws ParserConfigurationException, SAXException, IOException {
-        //»ñÈ¡½âÎöÆ÷¹¤³§
+        //è·å–è§£æå™¨å·¥å‚
         SAXParserFactory factory = SAXParserFactory.newInstance();
-        //´Ó½âÎöÆ÷¹¤³§ÖĞ»ñÈ¡½âÎöÆ÷
+        //ä»è§£æå™¨å·¥å‚ä¸­è·å–è§£æå™¨
         SAXParser saxParser = factory.newSAXParser();
-        //¼ÓÔØÎÄµµ×¢²á´¦ÀíÆ÷
-        //±àĞ´´¦ÀíÆ÷
+        //åŠ è½½æ–‡æ¡£æ³¨å†Œå¤„ç†å™¨
+        //ç¼–å†™å¤„ç†å™¨
         PersonHandler personHandler = new PersonHandler();
-        //¼ÓÔØxml×ÊÔ´
+        //åŠ è½½xmlèµ„æº
         InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("com/csy/http/util/person.xml");
         //InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("com/csy/http/util/bean.xml");
         saxParser.parse(inputStream,personHandler);
 
         List<Person> personList = personHandler.getPersonList();
         for(Person person : personList){
-            System.out.println("½âÎöÊı¾İ£º"+person.getName()+"--->"+person.getAge());
+            System.out.println("è§£ææ•°æ®ï¼š"+person.getName()+"--->"+person.getAge());
         }
     }
 }

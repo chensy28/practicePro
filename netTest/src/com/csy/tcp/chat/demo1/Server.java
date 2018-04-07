@@ -5,30 +5,30 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º·þÎñÆ÷¶Ë£¨½ÓÊÕÓë·¢ËÍ²»Ó¦¸ÃÓÐÏÈºóË³Ðò£¬Ó¦¸Ã·ÅÔÚÏß³ÌÖÐ£©
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ03ÈÕ ÏÂÎç17:13
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šæœåŠ¡å™¨ç«¯ï¼ˆæŽ¥æ”¶ä¸Žå‘é€ä¸åº”è¯¥æœ‰å…ˆåŽé¡ºåºï¼Œåº”è¯¥æ”¾åœ¨çº¿ç¨‹ä¸­ï¼‰
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ03æ—¥ ä¸‹åˆ17:13
  *
  * @author csypc
  * @version 1.0
  */
 public class Server {
     public static void main(String[] args) throws IOException {
-        //´´½¨·þÎñÆ÷¶Ë£¬ÖÆ¶¨¶Ë¿Ú
+        //åˆ›å»ºæœåŠ¡å™¨ç«¯ï¼Œåˆ¶å®šç«¯å£
         ServerSocket serverSocket = new ServerSocket(8888);
 
-        //½ÓÊÕ¿Í»§¶ËÁ¬½Ó¡¢×èÈûÊ½µÄ£¨»ñÈ¡µ½Í¨ÐÅÍ¨µÀ£©
+        //æŽ¥æ”¶å®¢æˆ·ç«¯è¿žæŽ¥ã€é˜»å¡žå¼çš„ï¼ˆèŽ·å–åˆ°é€šä¿¡é€šé“ï¼‰
         Socket socket = serverSocket.accept();
 
-        //½ÓÊÕÊý¾Ý
+        //æŽ¥æ”¶æ•°æ®
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        String msg = reader.readLine();//×èÈûÊ½·½·¨£¬ÈôÃ»ÓÐ¶Áµ½Êý¾Ý»á±¨Òì³£
+        String msg = reader.readLine();//é˜»å¡žå¼æ–¹æ³•ï¼Œè‹¥æ²¡æœ‰è¯»åˆ°æ•°æ®ä¼šæŠ¥å¼‚å¸¸
         System.out.println(msg);
 
-        //·¢ËÍÊý¾Ý
+        //å‘é€æ•°æ®
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-        writer.write("·þÎñ¶ËÊý¾Ý--->");
+        writer.write("æœåŠ¡ç«¯æ•°æ®--->");
         writer.newLine();
         writer.flush();
 

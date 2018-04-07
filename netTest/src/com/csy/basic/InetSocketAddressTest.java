@@ -5,10 +5,10 @@ import java.net.InetSocketAddress;
 import java.net.UnknownHostException;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º´ËÀàÊµÏÖ IP Ì×½Ó×ÖµØÖ·£¨IP µØÖ· + ¶Ë¿ÚºÅ£©
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ29ÈÕ ÏÂÎç08:53
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šæ­¤ç±»å®ç° IP å¥—æ¥å­—åœ°å€ï¼ˆIP åœ°å€ + ç«¯å£å·ï¼‰
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ29æ—¥ ä¸‹åˆ08:53
  *
  * @author csypc
  * @version 1.0
@@ -17,7 +17,7 @@ public class InetSocketAddressTest {
     public static void main(String[] args) {
         try {
             InetAddress address = InetAddress.getByName("www.baicu.com");
-            //¸ù¾İ IP µØÖ·ºÍ¶Ë¿ÚºÅ´´½¨Ì×½Ó×ÖµØÖ·¡£
+            //æ ¹æ® IP åœ°å€å’Œç«¯å£å·åˆ›å»ºå¥—æ¥å­—åœ°å€ã€‚
             InetSocketAddress socketAddress = new InetSocketAddress(address,80);
 
             System.out.println(socketAddress.getHostName());

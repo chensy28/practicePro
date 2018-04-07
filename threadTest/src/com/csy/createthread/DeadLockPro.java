@@ -1,10 +1,10 @@
 package com.csy.createthread;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º³öÏÖËÀËøµÄÇé¿ö(¹ı¶àÊ¹ÓÃÍ¬²½)
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ11ÈÕ ÏÂÎç21:54
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼šå‡ºç°æ­»é”çš„æƒ…å†µ(è¿‡å¤šä½¿ç”¨åŒæ­¥)
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ11æ—¥ ä¸‹åˆ21:54
  *
  * @author csypc
  * @version 1.0
@@ -13,14 +13,14 @@ public class DeadLockPro {
     public static void main(String[] args) {
          Object goods = new Object();
          Object money = new Object();
-         //¶à¸öÏß³Ì¹²Ïí¹«ÓĞµÄ¶ÔÏó£¬²¢ÇÒ¶¼Ëø×¡ÁË£¬±Ë´Ë¶¼²»ÊÍ·Å£¬¾ÍÔì³ÉËÀËø
+         //å¤šä¸ªçº¿ç¨‹å…±äº«å…¬æœ‰çš„å¯¹è±¡ï¼Œå¹¶ä¸”éƒ½é”ä½äº†ï¼Œå½¼æ­¤éƒ½ä¸é‡Šæ”¾ï¼Œå°±é€ æˆæ­»é”
          DeakLock1 deakLock = new DeakLock1(goods,money);
          DeakLock2 deakLock2 = new DeakLock2(goods,money);
 
          Thread thread = new Thread(deakLock);
          Thread thread1 = new Thread(deakLock2);
 
-        //Æô¶¯Ïß³Ì
+        //å¯åŠ¨çº¿ç¨‹
          thread.start();
          thread1.start();
     }
@@ -51,7 +51,7 @@ class DeakLock1 implements Runnable{
             }
 
             synchronized (money){
-                System.out.println("Ò»ÊÖ½»»õ¡£¡£¡£");
+                System.out.println("ä¸€æ‰‹äº¤è´§ã€‚ã€‚ã€‚");
             }
         }
     }
@@ -78,12 +78,12 @@ class DeakLock2 implements Runnable{
     public void test2(){
         synchronized(money){
             try {
-                Thread.sleep(200);//ÑÓ³¤Ê±¼ä£¬À©´ó·¢ÉúµÄ´íÎó
+                Thread.sleep(200);//å»¶é•¿æ—¶é—´ï¼Œæ‰©å¤§å‘ç”Ÿçš„é”™è¯¯
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             synchronized (goods){
-                System.out.println("Ò»ÊÖ½»Ç®¡£¡£¡£");
+                System.out.println("ä¸€æ‰‹äº¤é’±ã€‚ã€‚ã€‚");
             }
         }
     }

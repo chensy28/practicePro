@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.net.ServerSocket;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º·şÎñÆ÷£¨·â×°response£©
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ06ÈÕ ÏÂÎç08:45
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šæœåŠ¡å™¨ï¼ˆå°è£…responseï¼‰
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ06æ—¥ ä¸‹åˆ08:45
  *
  * @author csypc
  * @version 1.0
@@ -23,7 +23,7 @@ public class Server {
         server.receive();
     }
 
-    //Æô¶¯·şÎñ
+    //å¯åŠ¨æœåŠ¡
     public void start(){
         try {
             serverSocket = new ServerSocket(8887);
@@ -32,7 +32,7 @@ public class Server {
         }
     }
 
-    //½ÓÊÕĞÅÏ¢
+    //æ¥æ”¶ä¿¡æ¯
     public String receive(){
         StringBuilder reponse = new StringBuilder();
         try {
@@ -49,7 +49,7 @@ public class Server {
         return reponse.toString();
     }
 
-    //ÏìÓ¦ĞÅÏ¢
+    //å“åº”ä¿¡æ¯
     public void send(){
 
     }

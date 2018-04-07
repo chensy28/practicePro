@@ -10,10 +10,10 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º·¢ËÍÊı¾İÏß³Ì
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ04ÈÕ ÏÂÎç22:03
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šå‘é€æ•°æ®çº¿ç¨‹
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ04æ—¥ ä¸‹åˆ22:03
  *
  * @author csypc
  * @version 1.0
@@ -28,7 +28,7 @@ public class Send implements Runnable{
         reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
-    //³õÊ¼»¯Êı¾İ
+    //åˆå§‹åŒ–æ•°æ®
     public Send(Socket client){
         this();
         try {
@@ -36,11 +36,11 @@ public class Send implements Runnable{
         } catch (IOException e) {
             //e.printStackTrace();
             isRunning = false;
-            com.csy.tcp.chat.demo2.CloseIOUtil.closeAll(reader, dos);//¹Ø±ÕÁ÷
+            com.csy.tcp.chat.demo2.CloseIOUtil.closeAll(reader, dos);//å…³é—­æµ
         }
     }
 
-    //½ÓÊÕÊı¾İ
+    //æ¥æ”¶æ•°æ®
     public String getMsg(){
         try {
             return reader.readLine();
@@ -50,7 +50,7 @@ public class Send implements Runnable{
         return "";
     }
 
-    //·¢ËÍÊı¾İ
+    //å‘é€æ•°æ®
     public void send(){
         String msg = getMsg();
 
@@ -63,7 +63,7 @@ public class Send implements Runnable{
         } catch (IOException e) {
             //e.printStackTrace();
             isRunning = false;
-            CloseIOUtil.closeAll(reader, dos);//¹Ø±ÕÁ÷
+            CloseIOUtil.closeAll(reader, dos);//å…³é—­æµ
         }
     }
 

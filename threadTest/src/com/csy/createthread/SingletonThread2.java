@@ -1,10 +1,10 @@
 package com.csy.createthread;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£ºµ¥ÀıÄ£Ê½ ¶öººÊ½
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ11ÈÕ ÏÂÎç00:36
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼šå•ä¾‹æ¨¡å¼ é¥¿æ±‰å¼
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ11æ—¥ ä¸‹åˆ00:36
  *
  * @author csypc
  * @version 1.0
@@ -32,18 +32,18 @@ public class SingletonThread2 {
 }
 
 class SingleTon{
-    //ÉùÃ÷¾²Ì¬µÄ±äÁ¿£¬²¢ÇÒ½øĞĞ³õÊ¼»¯
-    private static SingleTon singleTon = new SingleTon(); //--->ÓëÀÁººÊ½Çø±ğÖ®´¦
-    //¶ÔÍâÉùÃ÷Ë½ÓĞ¹¹ÔìÆ÷
+    //å£°æ˜é™æ€çš„å˜é‡ï¼Œå¹¶ä¸”è¿›è¡Œåˆå§‹åŒ–
+    private static SingleTon singleTon = new SingleTon(); //--->ä¸æ‡’æ±‰å¼åŒºåˆ«ä¹‹å¤„
+    //å¯¹å¤–å£°æ˜ç§æœ‰æ„é€ å™¨
     private SingleTon(){}
 
-    //¶ÔÍâÌá¹©·ÃÎÊ±äÁ¿µÄ¹«ÓĞ·½·¨£¬ÒòÎªÊµÀıÔÚÀà¼ÓÔØÊ±¾Í±»´´½¨ÁË£¬ËùÒÔÖ±½Ó·µ»Ø
+    //å¯¹å¤–æä¾›è®¿é—®å˜é‡çš„å…¬æœ‰æ–¹æ³•ï¼Œå› ä¸ºå®ä¾‹åœ¨ç±»åŠ è½½æ—¶å°±è¢«åˆ›å»ºäº†ï¼Œæ‰€ä»¥ç›´æ¥è¿”å›
     public static SingleTon getInstance(){
-        return singleTon;   //--->ÓëÀÁººÊ½Çø±ğÖ®´¦
+        return singleTon;   //--->ä¸æ‡’æ±‰å¼åŒºåˆ«ä¹‹å¤„
     }
 }
 
-//ÄÚ²¿ÀàĞ´·¨
+//å†…éƒ¨ç±»å†™æ³•
 class SingleTonTest{
     static class Nested{
         private static SingleTonTest singleTonTest = new SingleTonTest();

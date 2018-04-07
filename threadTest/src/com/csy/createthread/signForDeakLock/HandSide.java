@@ -1,10 +1,10 @@
 package com.csy.createthread.signForDeakLock;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºÊÖ¹¤Ãæ£¨¹«¹²×ÊÔ´£©
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ13ÈÕ ÏÂÎç12:05
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šæ‰‹å·¥é¢ï¼ˆå…¬å…±èµ„æºï¼‰
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ13æ—¥ ä¸‹åˆ12:05
  *
  * @author csypc
  * @version 1.0
@@ -12,20 +12,20 @@ package com.csy.createthread.signForDeakLock;
 public class HandSide {
 
     /**
-     * Éú²úÕßÉú²ú£¬Ïû·ÑÕßµÈ´ı£¬Éú²úÍêºóÍ¨ÖªÏû·ÑÕß ²¢ÇÒÊÍ·Å×ÊÔ´ sign = true
-     * Ïû·ÑÕßÏû·Ñ£¬Éú²úÕßµÈ´ı£¬Ïû·ÑºóÍ¨ÖªÉú²úÕß  ²¢ÇÒÊÍ·Å×ÊÔ´  sign = flase
+     * ç”Ÿäº§è€…ç”Ÿäº§ï¼Œæ¶ˆè´¹è€…ç­‰å¾…ï¼Œç”Ÿäº§å®Œåé€šçŸ¥æ¶ˆè´¹è€… å¹¶ä¸”é‡Šæ”¾èµ„æº sign = true
+     * æ¶ˆè´¹è€…æ¶ˆè´¹ï¼Œç”Ÿäº§è€…ç­‰å¾…ï¼Œæ¶ˆè´¹åé€šçŸ¥ç”Ÿäº§è€…  å¹¶ä¸”é‡Šæ”¾èµ„æº  sign = flase
      *
-     * Ã÷°×¶àÏß³ÌË¼Ïë£º¾ÍÊÇ¶à¸öÏß³Ì²»¶ÏµÄÇÀ¶á×ÊÔ´£¬ÊÍ·Å×ÊÔ´£¬¸ù¾İ·ÖÅäµÄÊ±¼äÆ¬¿ìËÙ½»»»
-     * wait() ÊÍ·Å×ÊÔ´ºó notify()»½ĞÑÏß³Ì ¸Ä±ä±êÖ¾
+     * æ˜ç™½å¤šçº¿ç¨‹æ€æƒ³ï¼šå°±æ˜¯å¤šä¸ªçº¿ç¨‹ä¸æ–­çš„æŠ¢å¤ºèµ„æºï¼Œé‡Šæ”¾èµ„æºï¼Œæ ¹æ®åˆ†é…çš„æ—¶é—´ç‰‡å¿«é€Ÿäº¤æ¢
+     * wait() é‡Šæ”¾èµ„æºå notify()å”¤é†’çº¿ç¨‹ æ”¹å˜æ ‡å¿—
      */
 
-    //ÃæÌõ
+    //é¢æ¡
     private String noodle;
 
-    //ĞÅºÅ±êÖ¾
+    //ä¿¡å·æ ‡å¿—
     private boolean sign = true;
 
-    //×öÃæ
+    //åšé¢
     public synchronized void doNoodle(String noodle,int i){
         if(!sign){
             try {
@@ -35,7 +35,7 @@ public class HandSide {
             }
         }
 
-        System.out.println("µÚ"+i+"ÖÖ"+noodle);
+        System.out.println("ç¬¬"+i+"ç§"+noodle);
         this.noodle = noodle;
 
         this.notify();
@@ -43,7 +43,7 @@ public class HandSide {
         sign = false;
     }
 
-    //³ÔÃæ
+    //åƒé¢
     public synchronized void eatNoodel(int i){
 
         if(sign){
@@ -54,7 +54,7 @@ public class HandSide {
             }
         }
 
-        System.out.println("µÚ"+i+"ÖÖºÃ³Ô£¡");
+        System.out.println("ç¬¬"+i+"ç§å¥½åƒï¼");
 
         this.notify();
         sign = true;

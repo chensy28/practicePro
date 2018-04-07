@@ -5,33 +5,33 @@ import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º¹ÜµÀÊäÈëÁ÷Ó¦¸ÃÁ¬½Óµ½¹ÜµÀÊä³öÁ÷£»¹ÜµÀÊäÈëÁ÷Ìá¹©ÒªĞ´Èë¹ÜµÀÊä³öÁ÷µÄËùÓĞÊı¾İ×Ö½Ú¡£
- *          ²»½¨Òé¶ÔÕâÁ½¸ö¶ÔÏó³¢ÊÔÊ¹ÓÃµ¥¸öÏß³Ì£¬ÒòÎªÕâÑù¿ÉÄÜËÀËøÏß³Ì¡£
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ23ÈÕ ÏÂÎç08:18
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šç®¡é“è¾“å…¥æµåº”è¯¥è¿æ¥åˆ°ç®¡é“è¾“å‡ºæµï¼›ç®¡é“è¾“å…¥æµæä¾›è¦å†™å…¥ç®¡é“è¾“å‡ºæµçš„æ‰€æœ‰æ•°æ®å­—èŠ‚ã€‚
+ *          ä¸å»ºè®®å¯¹è¿™ä¸¤ä¸ªå¯¹è±¡å°è¯•ä½¿ç”¨å•ä¸ªçº¿ç¨‹ï¼Œå› ä¸ºè¿™æ ·å¯èƒ½æ­»é”çº¿ç¨‹ã€‚
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ23æ—¥ ä¸‹åˆ08:18
  *
  * @author csypc
  * @version 1.0
  */
 public class PipedStreamTest {
     public static void main(String[] args) {
-        //ÔÚJavaÖĞ£¬¿ÉÒÔÊ¹ÓÃ¹ÜµÀÁ÷½øĞĞÏß³ÌÖ®¼äµÄÍ¨ĞÅ
+        //åœ¨Javaä¸­ï¼Œå¯ä»¥ä½¿ç”¨ç®¡é“æµè¿›è¡Œçº¿ç¨‹ä¹‹é—´çš„é€šä¿¡
         PipedReader reader = new PipedReader();
         PipedSender sender = new PipedSender();
 
         PipedOutputStream out = new PipedSender().getOut();
         PipedInputStream in = new PipedReader().getIn();
 
-        //½«¹ÜµÀ½øĞĞÁ¬½Ó
+        //å°†ç®¡é“è¿›è¡Œè¿æ¥
         try {
             in.connect(out);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        //Æô¶¯Ïß³Ì£¬¶ÔÊı¾İ½øĞĞ¶ÁÈ¡»òĞ´Èë
+        //å¯åŠ¨çº¿ç¨‹ï¼Œå¯¹æ•°æ®è¿›è¡Œè¯»å–æˆ–å†™å…¥
         reader.start();
-        sender.start();                       //´Ë³ÌĞòÅ×³öjava.io.IOException: Pipe not connected
+        sender.start();                       //æ­¤ç¨‹åºæŠ›å‡ºjava.io.IOException: Pipe not connected
     }
 }

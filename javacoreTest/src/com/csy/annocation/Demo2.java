@@ -2,24 +2,24 @@
 package com.csy.annocation;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£ºDemo2
- * ÀàÃèÊö£ºÒıÓÃ×Ô¶¨Òå×¢½â @TargetÊ¹ÓÃ
- * ´´½¨Ê±¼ä£º2016Äê01ÔÂ27ÈÕ ÏÂÎç23:19
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼šDemo2
+ * ç±»æè¿°ï¼šå¼•ç”¨è‡ªå®šä¹‰æ³¨è§£ @Targetä½¿ç”¨
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´01æœˆ27æ—¥ ä¸‹åˆ23:19
  *
  * @author csypc
  * @version 1.0
  */
-@MyAnnotation                                  //×÷ÓÃÓÚÀà
+@MyAnnotation                                  //ä½œç”¨äºç±»
 public class Demo2 {
-    @MyAnnotation(value="aa")                              //×÷ÓÃÓÚ³ÉÔ±±äÁ¿
+    @MyAnnotation(value="aa")                              //ä½œç”¨äºæˆå‘˜å˜é‡
     private String ano;
-    @MyAnnotation (arr={"dd","gg"})                            //×÷ÓÃÓÚ·½·¨
+    @MyAnnotation (arr={"dd","gg"})                            //ä½œç”¨äºæ–¹æ³•
 
-    public void show( @MyAnnotation String s){  //×÷ÓÃÓÚ²ÎÊı
+    public void show( @MyAnnotation String s){  //ä½œç”¨äºå‚æ•°
 
-        @MyAnnotation2                         // ×÷ÓÃÓÚÁíÒ»¸ö×¢½â
-        @MyAnnotation                         //×÷ÓÃÓÚ³ÉÔ±±äÁ¿
+        @MyAnnotation2                         // ä½œç”¨äºå¦ä¸€ä¸ªæ³¨è§£
+        @MyAnnotation                         //ä½œç”¨äºæˆå‘˜å˜é‡
          String str;
     }
 

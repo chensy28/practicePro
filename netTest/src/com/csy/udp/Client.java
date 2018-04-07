@@ -6,15 +6,15 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º Udp¿Í»§¶Ë(Êı¾İ×ª»»£¬Ê¹ÓÃÁ÷)
- * ÀàÃèÊö£º  1) ´´½¨¿Í»§¶Ë+¶Ë¿Ú
- *          2) ×¼±¸Êı¾İ
- *          3) ´ò°ü£¨Ö¸¶¨·şÎñÆ÷¶ËµÄµØÖ·¼°¶Ë¿Ú£©
- *          4£©·¢ËÍ
- *          5£©ÊÍ·Å
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š Udpå®¢æˆ·ç«¯(æ•°æ®è½¬æ¢ï¼Œä½¿ç”¨æµ)
+ * ç±»æè¿°ï¼š  1) åˆ›å»ºå®¢æˆ·ç«¯+ç«¯å£
+ *          2) å‡†å¤‡æ•°æ®
+ *          3) æ‰“åŒ…ï¼ˆæŒ‡å®šæœåŠ¡å™¨ç«¯çš„åœ°å€åŠç«¯å£ï¼‰
+ *          4ï¼‰å‘é€
+ *          5ï¼‰é‡Šæ”¾
  *
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ31ÈÕ ÏÂÎç21:17
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ31æ—¥ ä¸‹åˆ21:17
  *
  * @author csypc
  * @version 1.0
@@ -22,18 +22,18 @@ import java.net.InetAddress;
 public class Client {
     public static void main(String[] args) throws IOException {
 
-        //´´½¨¿Í»§¶Ë+¶Ë¿Ú
+        //åˆ›å»ºå®¢æˆ·ç«¯+ç«¯å£
         DatagramSocket client = new DatagramSocket(6666);
 
-        //×¼±¸Êı¾İ
+        //å‡†å¤‡æ•°æ®
         byte [] sendData =  convertToBytes(82.15);
         InetAddress ip = InetAddress.getLocalHost();
 
-        //´ò°ü£¨Ö¸¶¨·şÎñÆ÷¶ËµÄµØÖ·¼°¶Ë¿Ú£©
+        //æ‰“åŒ…ï¼ˆæŒ‡å®šæœåŠ¡å™¨ç«¯çš„åœ°å€åŠç«¯å£ï¼‰
         DatagramPacket packet = new DatagramPacket(sendData,0,sendData.length,ip,8888);
-        //·¢ËÍ
+        //å‘é€
         client.send(packet);
-        //ÊÍ·Å
+        //é‡Šæ”¾
         client.close();
 
     }

@@ -1,10 +1,10 @@
 package com.csy.createthread.signForDeakLock;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º³øÊ¦£¨Éú²úÕß£©
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ13ÈÕ ÏÂÎç12:08
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šå¨å¸ˆï¼ˆç”Ÿäº§è€…ï¼‰
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ13æ—¥ ä¸‹åˆ12:08
  *
  * @author csypc
  * @version 1.0
@@ -20,8 +20,8 @@ public class Cook implements Runnable  {
     @Override
     public void run() {
         for(int i=1;i<=5;i++){
-            //µ÷ÓÃ¹«ÓĞ×ÊÔ´µÄ·½·¨
-            handSide.doNoodle("ÊÖ¹¤Ãæ",i);
+            //è°ƒç”¨å…¬æœ‰èµ„æºçš„æ–¹æ³•
+            handSide.doNoodle("æ‰‹å·¥é¢",i);
         }
     }
 }

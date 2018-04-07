@@ -1,10 +1,10 @@
 package com.csy.createthread.produceAndConsumerAnother;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºÏû·ÑÕß
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ12ÈÕ ÏÂÎç20:55
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šæ¶ˆè´¹è€…
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ12æ—¥ ä¸‹åˆ20:55
  *
  * @author csypc
  * @version 1.0
@@ -19,7 +19,7 @@ public class Watcher implements Runnable {
     @Override
     public void run() {
         for(int i=0;i<2;i++) {
-            //Ïû·ÑÕßÏû·Ñ,Ïû·Ñ¹«¹²×ÊÔ´
+            //æ¶ˆè´¹è€…æ¶ˆè´¹,æ¶ˆè´¹å…¬å…±èµ„æº
            movie.watch();
         }
     }

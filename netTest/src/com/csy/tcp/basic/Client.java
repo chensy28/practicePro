@@ -4,28 +4,28 @@ import java.io.*;
 import java.net.Socket;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ03ÈÕ ÏÂÎç17:13
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ03æ—¥ ä¸‹åˆ17:13
  *
  * @author csypc
  * @version 1.0
  */
 public class Client {
     public static void main(String[] args) throws IOException {
-        //´´½¨¿Í»§¶Ë£¬±ØĞëÖÆ¶¨·şÎñ¶Ë+¶Ë¿Ú£¬´ËÊ±¾ÍÔÚÁ¬½Ó
+        //åˆ›å»ºå®¢æˆ·ç«¯ï¼Œå¿…é¡»åˆ¶å®šæœåŠ¡ç«¯+ç«¯å£ï¼Œæ­¤æ—¶å°±åœ¨è¿æ¥
         Socket socket = new Socket("localhost",8889);
 
         byte []arr = new byte[1024];
         BufferedInputStream bis = new BufferedInputStream(socket.getInputStream());
         int len = bis.read(arr);
-        System.out.println("Client£º"+new String(arr,0,len));
+        System.out.println("Clientï¼š"+new String(arr,0,len));
 /*
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        String msg = reader.readLine();//×èÈûÊ½·½·¨£¬ÈôÃ»ÓĞ¶Áµ½Êı¾İ»á±¨Òì³£*/
+        String msg = reader.readLine();//é˜»å¡å¼æ–¹æ³•ï¼Œè‹¥æ²¡æœ‰è¯»åˆ°æ•°æ®ä¼šæŠ¥å¼‚å¸¸*/
 
-        //Ê¹ÓÃÊı¾İÊäÈëÁ÷¶Á
+        //ä½¿ç”¨æ•°æ®è¾“å…¥æµè¯»
         /*DataInputStream in = new DataInputStream(socket.getInputStream());
         String msg = in.readUTF();
         System.out.println(msg);*/

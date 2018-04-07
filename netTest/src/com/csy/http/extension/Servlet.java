@@ -1,10 +1,10 @@
 package com.csy.http.extension;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º½«ÇëÇóÏìÓ¦·â×°³ÉServlet
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ12ÈÕ ÏÂÎç21:20
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šå°†è¯·æ±‚å“åº”å°è£…æˆServlet
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ12æ—¥ ä¸‹åˆ21:20
  *
  * @author csypc
  * @version 1.0

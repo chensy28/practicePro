@@ -3,35 +3,35 @@ package com.csy.createthread;
 import java.util.concurrent.*;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºÍ¨¹ıCallableºÍFuture´´½¨Ïß³Ì
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ07ÈÕ ÏÂÎç21:58
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šé€šè¿‡Callableå’ŒFutureåˆ›å»ºçº¿ç¨‹
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ07æ—¥ ä¸‹åˆ21:58
  *
  * @author csypc
  * @version 1.0
  */
 public class CallableCreate {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-         //´´½¨Ïß³Ì
+         //åˆ›å»ºçº¿ç¨‹
         ExecutorService service = Executors.newFixedThreadPool(1);
         Race race = new Race();
-        //»ñÈ¡Öµ
+        //è·å–å€¼
         Future<Integer> future = service.submit(race);
         int result = future.get();
         System.out.println(result);
 
-        //Í£Ö¹·şÎñ
+        //åœæ­¢æœåŠ¡
         service.shutdownNow();
     }
 }
 
 class Race implements Callable<Integer>{
-    //¾ßÓĞ·µ»ØÖµ²¢ÇÒÅ×³öÒì³£
+    //å…·æœ‰è¿”å›å€¼å¹¶ä¸”æŠ›å‡ºå¼‚å¸¸
     @Override
     public Integer call() throws Exception {
 
-        //ÔÚ´Ë´¦¼ÓÉÏÒµÎñ´¦Àí
+        //åœ¨æ­¤å¤„åŠ ä¸Šä¸šåŠ¡å¤„ç†
         return 1020;
     }
 }

@@ -1,10 +1,10 @@
 package com.csy.createthread;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ07ÈÕ ÏÂÎç08:56
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ07æ—¥ ä¸‹åˆ08:56
  *
  * @author csypc
  * @version 1.0
@@ -19,9 +19,9 @@ public class RunnableCreate implements Runnable{
     }
 
     public static void main(String[] args) {
-        //ÕæÊµ½ÇÉ«
+        //çœŸå®è§’è‰²
         RunnableCreate create = new RunnableCreate();
-        //´úÀí½ÇÉ«
+        //ä»£ç†è§’è‰²
         Thread thread = new Thread(create);
         thread.start();
     }

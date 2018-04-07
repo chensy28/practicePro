@@ -1,17 +1,17 @@
 package com.csy.createthread;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºÍ£Ö¹Ïß³Ì(×Ô¶¨Òå·½·¨ £ºÍâ²¿¸ÉÉæ)
- * ´´½¨Ê±¼ä£º2016Äê03ÔÂ08ÈÕ ÏÂÎç21:32
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šåœæ­¢çº¿ç¨‹(è‡ªå®šä¹‰æ–¹æ³• ï¼šå¤–éƒ¨å¹²æ¶‰)
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´03æœˆ08æ—¥ ä¸‹åˆ21:32
  *
  * @author csypc
  * @version 1.0
  */
 public class ThreadStop {
     public static void main(String[] args) {
-        //ÓÉÓÚThreadÀàÖĞÌá¹©µÄstop·½·¨¹ıÊ±ÁË£¬²»°²È«ËùÓĞ×Ô¶¨Òå·¨Í£Ö¹Ïß³ÌµÄ·½·¨
+        //ç”±äºThreadç±»ä¸­æä¾›çš„stopæ–¹æ³•è¿‡æ—¶äº†ï¼Œä¸å®‰å…¨æ‰€æœ‰è‡ªå®šä¹‰æ³•åœæ­¢çº¿ç¨‹çš„æ–¹æ³•
         Study study = new Study();
         Thread thread = new Thread(study);
         thread.start();
@@ -27,17 +27,17 @@ public class ThreadStop {
 
 class Study implements Runnable{
 
-    //¶¨ÒåÏß³ÌÌåÊ¹ÓÃµÄ±êÖ¾
+    //å®šä¹‰çº¿ç¨‹ä½“ä½¿ç”¨çš„æ ‡å¿—
     private boolean flag = true;
     @Override
     public void run() {
-        //Ê¹ÓÃ±êÖ¾
+        //ä½¿ç”¨æ ‡å¿—
         while(flag){
-            System.out.println("Thread start £¡");
+            System.out.println("Thread start ï¼");
         }
     }
 
-    //¶ÔÍâÌá¹©¸Ä±ä±êÖ¾µÄ·½·¨
+    //å¯¹å¤–æä¾›æ”¹å˜æ ‡å¿—çš„æ–¹æ³•
     public void stop(){
         this.flag = false;
     }

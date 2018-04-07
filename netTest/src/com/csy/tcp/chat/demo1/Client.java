@@ -4,28 +4,28 @@ import java.io.*;
 import java.net.Socket;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£ºÊµÏÖ¿Í»§¶ËÓë·şÎñÆ÷µÄ½»»¥
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ03ÈÕ ÏÂÎç17:13
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šå®ç°å®¢æˆ·ç«¯ä¸æœåŠ¡å™¨çš„äº¤äº’
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ03æ—¥ ä¸‹åˆ17:13
  *
  * @author csypc
  * @version 1.0
  */
 public class Client {
     public static void main(String[] args) throws IOException {
-        //´´½¨¿Í»§¶Ë£¬±ØĞëÖÆ¶¨·şÎñ¶Ë+¶Ë¿Ú£¬´ËÊ±¾ÍÔÚÁ¬½Ó
+        //åˆ›å»ºå®¢æˆ·ç«¯ï¼Œå¿…é¡»åˆ¶å®šæœåŠ¡ç«¯+ç«¯å£ï¼Œæ­¤æ—¶å°±åœ¨è¿æ¥
         Socket socket = new Socket("localhost",8888);
 
-        //·¢ËÍÊı¾İ
+        //å‘é€æ•°æ®
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-        writer.write("¿Í»§¶ËÊı¾İ--->");
+        writer.write("å®¢æˆ·ç«¯æ•°æ®--->");
         writer.newLine();
         writer.flush();
 
-        //½ÓÊÕÊı¾İ
+        //æ¥æ”¶æ•°æ®
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-        String msg = reader.readLine();//×èÈûÊ½·½·¨£¬ÈôÃ»ÓĞ¶Áµ½Êı¾İ»á±¨Òì³£
+        String msg = reader.readLine();//é˜»å¡å¼æ–¹æ³•ï¼Œè‹¥æ²¡æœ‰è¯»åˆ°æ•°æ®ä¼šæŠ¥å¼‚å¸¸
         System.out.println(msg);
     }
 }

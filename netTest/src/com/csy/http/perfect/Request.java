@@ -8,21 +8,21 @@ import java.util.*;
 import java.util.StringTokenizer;
 
 /**
- * ÏîÄ¿Ãû³Æ£º
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º·â×°¿Í»§¶ËĞÅÏ¢
- * ´´½¨Ê±¼ä£º2016Äê04ÔÂ08ÈÕ ÏÂÎç12:52
+ * é¡¹ç›®åç§°ï¼š
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼šå°è£…å®¢æˆ·ç«¯ä¿¡æ¯
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´04æœˆ08æ—¥ ä¸‹åˆ12:52
  *
  * @author csypc
  * @version 1.0
  */
 public class Request {
 
-    //ĞĞ½áÊø·ûÓë»Ø³µ·û
+    //è¡Œç»“æŸç¬¦ä¸å›è½¦ç¬¦
     public static String CRLF = "\r\n";
-    public static String BLANK = " ";//¿ÕĞĞ
+    public static String BLANK = " ";//ç©ºè¡Œ
 
-    //ÇëÇó·½Ê½
+    //è¯·æ±‚æ–¹å¼
     private String method;
     //url
     private String url;
@@ -75,11 +75,11 @@ public class Request {
         this.inputStream = inputStream;
     }
 
-    //Ğ­Òé
+    //åè®®
     private String protocol;
-    //²ÎÊı
+    //å‚æ•°
     private Map<String,List<String>> map;
-    //ÇëÇóÍ·ĞÅÏ¢
+    //è¯·æ±‚å¤´ä¿¡æ¯
     private StringBuilder titleInfo;
 
     private InputStream inputStream;
@@ -97,19 +97,19 @@ public class Request {
         this.inputStream = inputStream;
     }
 
-    //½âÎö×Ö·û´®(Çó½â×Ó´®Ê±ĞèÒªÈ¥µô¿Õ¸ñ)
+    //è§£æå­—ç¬¦ä¸²(æ±‚è§£å­ä¸²æ—¶éœ€è¦å»æ‰ç©ºæ ¼)
     public void parse(){
         byte []info = new byte[20480];
         try {
-            //´ÓÊäÈëÁ÷¶ÁÈ¡Êı¾İ
+            //ä»è¾“å…¥æµè¯»å–æ•°æ®
             int len = inputStream.read(info);
 
             String requestStr = new String(info,0,len);
-            System.out.println("»ñÈ¡µ½µÄ×Ö·û´®£º"+requestStr);
+            System.out.println("è·å–åˆ°çš„å­—ç¬¦ä¸²ï¼š"+requestStr);
 
-            String paramterStr = "";//²ÎÊı×Ö·û´®
-            //System.out.println("toString·½·¨£º"+info.toString());
-            //int index = info.toString().indexOf(CRLF); //µ÷ÓÃµ½¶ÔÏóµÄtoString(),ËùÒÔ²¢²»ÊÇ½«×Ö½ÚÊı¾İ×ª»¯ÎªString
+            String paramterStr = "";//å‚æ•°å­—ç¬¦ä¸²
+            //System.out.println("toStringæ–¹æ³•ï¼š"+info.toString());
+            //int index = info.toString().indexOf(CRLF); //è°ƒç”¨åˆ°å¯¹è±¡çš„toString(),æ‰€ä»¥å¹¶ä¸æ˜¯å°†å­—èŠ‚æ•°æ®è½¬åŒ–ä¸ºString
             int index = requestStr.indexOf(CRLF);
             String firstStr = new String(info,0,index);
 
@@ -122,18 +122,18 @@ public class Request {
             protocol = firstStr.substring(httpIndex);
 
             if(method.equalsIgnoreCase("get")){
-                if(url.contains("?")) { //ÅĞ¶ÏÊÇ·ñ´æÔÚ²ÎÊı
+                if(url.contains("?")) { //åˆ¤æ–­æ˜¯å¦å­˜åœ¨å‚æ•°
                     String[] arr = url.split("\\?");
                     url = arr[0].trim();
                     paramterStr = arr[1].trim();
                 }
-            }else{ //post·½Ê½µÄ²ÎÊıÔÚÕıÎÄÖĞ
+            }else{ //postæ–¹å¼çš„å‚æ•°åœ¨æ­£æ–‡ä¸­
                 paramterStr = requestStr.substring(requestStr.lastIndexOf(CRLF)).trim();
             }
 
-            //·â×°²ÎÊı
+            //å°è£…å‚æ•°
             parseParams(paramterStr);
-            System.out.println("¿Í»§¶ËÇëÇóĞÅÏ¢"+"method:"+method+",url:"+url+",protocol:"+protocol+",paramterStr:"+paramterStr);
+            System.out.println("å®¢æˆ·ç«¯è¯·æ±‚ä¿¡æ¯"+"method:"+method+",url:"+url+",protocol:"+protocol+",paramterStr:"+paramterStr);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -141,30 +141,30 @@ public class Request {
 
     }
 
-    //½«²ÎÊı·â×°µ½mapÖĞ
+    //å°†å‚æ•°å°è£…åˆ°mapä¸­
     public void parseParams(String paramterStr){
 
         StringTokenizer tokenizer = new StringTokenizer(paramterStr,"&");
         while (tokenizer.hasMoreTokens()){
             String str = tokenizer.nextToken();
-            //°´µÈºÅ·Ö¸î
+            //æŒ‰ç­‰å·åˆ†å‰²
             String []arr = str.split("=");
             String key = "";
             String value = "";
-            if(arr.length == 1){ //=Á½±ßÖ»ÓĞÒ»¸ö²ÎÊı
+            if(arr.length == 1){ //=ä¸¤è¾¹åªæœ‰ä¸€ä¸ªå‚æ•°
                 key = arr[0];
                 value = null;
-            }else{              //=Á½±ßÓĞÁ½¸ö²ÎÊı
+            }else{              //=ä¸¤è¾¹æœ‰ä¸¤ä¸ªå‚æ•°
                 key = arr[0];
                 value = arr[1];
             }
             List<String> list = new ArrayList<String>();
             list.add(value);
 
-            //ÅĞ¶ÏÊÇ·ñ°üº¬ÖØ¸´µÄ¼ü(Ê¹µÃmap¼ü²»ÖØ¸´)
+            //åˆ¤æ–­æ˜¯å¦åŒ…å«é‡å¤çš„é”®(ä½¿å¾—mapé”®ä¸é‡å¤)
             if(!map.containsKey(key)){
                 map.put(key,list);
-            }else{//Èô°üº¬£¬°ÑÖµÌíµ½ÒÑÓĞµÄÁĞ±íÖĞ
+            }else{//è‹¥åŒ…å«ï¼ŒæŠŠå€¼æ·»åˆ°å·²æœ‰çš„åˆ—è¡¨ä¸­
                 List<String> oldList = map.get(key);
                 oldList.addAll(list);
                 map.put(key,oldList);
@@ -173,7 +173,7 @@ public class Request {
         }
     }
 
-    //»ñÈ¡²ÎÊı¶ÔÓ¦µÄÖµ
+    //è·å–å‚æ•°å¯¹åº”çš„å€¼
     public String getValue(String key){
         List<String> list = map.get(key);
         if(null == list) {
@@ -183,7 +183,7 @@ public class Request {
         }
     }
 
-    //»ñÈ¡²ÎÊı¶ÔÓ¦µÄÖµ(¶à¸ö)
+    //è·å–å‚æ•°å¯¹åº”çš„å€¼(å¤šä¸ª)
     public String[] getValues(String key){
         List<String> list = null;
         if(null == map.get(key)){

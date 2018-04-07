@@ -6,10 +6,10 @@ import javax.script.ScriptEngineManager;
 import java.util.List;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£º
- * ÀàÃèÊö£º
- * ´´½¨Ê±¼ä£º2016Äê02ÔÂ23ÈÕ ÏÂÎç08:18
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼š
+ * ç±»æè¿°ï¼š
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´02æœˆ23æ—¥ ä¸‹åˆ08:18
  *
  * @author csypc
  * @version 1.0
@@ -17,30 +17,30 @@ import java.util.List;
 public class EngineTest {
 
     public static void main(String[] args) throws Exception{
-        //ÒıÇæ¹ÜÀíÀà
+        //å¼•æ“ç®¡ç†ç±»
         ScriptEngineManager sem = new ScriptEngineManager();
-        //ÒıÇæ
-        ScriptEngine engine = sem.getEngineByName("javascript");//¿ÉÒÔĞ´Îªjs
+        //å¼•æ“
+        ScriptEngine engine = sem.getEngineByName("javascript");//å¯ä»¥å†™ä¸ºjs
 
-        //·ÅÈëµ½ÒıÇæ×´Ì¬ÖĞ
+        //æ”¾å…¥åˆ°å¼•æ“çŠ¶æ€ä¸­
         engine.put("msg","aaa");
         System.out.println(engine.get("msg"));
 
-        //Êä³öjsÖĞ±äÁ¿µÄÖµ
-        String str = "var user ={name:'ÕÅÈı',age:18};";
+        //è¾“å‡ºjsä¸­å˜é‡çš„å€¼
+        String str = "var user ={name:'å¼ ä¸‰',age:18};";
         str += "print(user.age)";
         engine.eval(str);
         //engine.eval("print('Hello, World')");
 
-        //µ÷ÓÃjsÖĞµÄ·½·¨
+        //è°ƒç”¨jsä¸­çš„æ–¹æ³•
         engine.eval("function add(a,b){var sum = a+b;return sum;}");
 
         Invocable jsinvocable = (Invocable)engine;
-        //ÓÃÓÚµ÷ÓÃ½Å±¾ÖĞ¶¨ÒåµÄ¶¥²ã³ÌĞòºÍº¯Êı¡£
+        //ç”¨äºè°ƒç”¨è„šæœ¬ä¸­å®šä¹‰çš„é¡¶å±‚ç¨‹åºå’Œå‡½æ•°ã€‚
         Object result = jsinvocable.invokeFunction("add",new Object[]{13,52});
         System.out.println(result);
 
-        //µ¼ÈëÆäËüµÄjava°ü£¬Ê¹ÓÃ°üÖĞµÄjavaÀà
+        //å¯¼å…¥å…¶å®ƒçš„javaåŒ…ï¼Œä½¿ç”¨åŒ…ä¸­çš„javaç±»
         //ReferenceError: "importPackage" is not defined in <eval> at line number 1
         String jsCode= "importPackage(java.util); var list = Arrays.asList(['gg','hh','kk']);";
         engine.eval(jsCode);

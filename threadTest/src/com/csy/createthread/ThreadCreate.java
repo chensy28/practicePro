@@ -14,35 +14,35 @@ public class ThreadCreate {
         Tortoise tortoise = new Tortoise();
         Dog dog = new Dog();
 
-        //ÆôÓÃÏß³Ì
+        //å¯ç”¨çº¿ç¨‹
         robbit.start();
         dog.start();
-        //ÔİÍ£µ±Ç°ÕıÔÚÖ´ĞĞµÄÏß³Ì¶ÔÏó£¬²¢Ö´ĞĞÆäËûÏß³Ì
+        //æš‚åœå½“å‰æ­£åœ¨æ‰§è¡Œçš„çº¿ç¨‹å¯¹è±¡ï¼Œå¹¶æ‰§è¡Œå…¶ä»–çº¿ç¨‹
         //Robbit.yield();
 
-        //ÉèÖÃÏß³ÌÓÅÏÈ¼¶
+        //è®¾ç½®çº¿ç¨‹ä¼˜å…ˆçº§
         /*robbit.setPriority(Thread.MAX_PRIORITY);
         tortoise.start();
         tortoise.setPriority(Thread.MIN_PRIORITY);*/
         /* dog.start();*/
 
-        //²»ĞèÒªÊÖ¶¯µ÷ÓÃrun·½·¨£¬Ö»Òªµ÷ÓÃstart£¨£©·½·¨ºó£¬½»ÓÉÄÚ²¿µ÷ÓÃ
+        //ä¸éœ€è¦æ‰‹åŠ¨è°ƒç”¨runæ–¹æ³•ï¼Œåªè¦è°ƒç”¨startï¼ˆï¼‰æ–¹æ³•åï¼Œäº¤ç”±å†…éƒ¨è°ƒç”¨
         /*robbit.run();
         tortoise.run();*/
 
-        //·µ»Øµ±Ç°Ïß³ÌµÄÏß³Ì×éÖĞ»î¶¯Ïß³ÌµÄÊıÄ¿
+        //è¿”å›å½“å‰çº¿ç¨‹çš„çº¿ç¨‹ç»„ä¸­æ´»åŠ¨çº¿ç¨‹çš„æ•°ç›®
        // System.out.println("active:" + Robbit.activeCount());
         /*robbit.destroy();*/
 
-        //·µ»Ø¸ÃÏß³ÌµÄ±êÊ¶·û   ---- 11:12
+        //è¿”å›è¯¥çº¿ç¨‹çš„æ ‡è¯†ç¬¦   ---- 11:12
         //System.out.println(robbit.getId()+":"+ tortoise.getId());
-        //·µ»Ø¸ÃÏß³ÌµÄÃû³Æ   ----- Thread-0 Thread-1
+        //è¿”å›è¯¥çº¿ç¨‹çš„åç§°   ----- Thread-0 Thread-1
        // System.out.println(robbit.getName() + " " + tortoise.getName());
 
-        //javaµÄÓÅÏÈ¼¶ÓÉ1µ½10£¬ÓÅÏÈ¼¶Ô½´ó£¬¾ÍÔ½ÏÈÖ´ĞĞ
+        //javaçš„ä¼˜å…ˆçº§ç”±1åˆ°10ï¼Œä¼˜å…ˆçº§è¶Šå¤§ï¼Œå°±è¶Šå…ˆæ‰§è¡Œ
         //System.out.print(robbit.getPriority()+ " " + tortoise.getPriority());
 
-       // ·µ»Ø¸ÃÏß³ÌµÄ×´Ì¬¡£ ¸Ã·½·¨ÓÃÓÚ¼àÊÓÏµÍ³×´Ì¬£¬²»ÓÃÓÚÍ¬²½¿ØÖÆ¡£  ----- RUNNABLE TERMINATED
+       // è¿”å›è¯¥çº¿ç¨‹çš„çŠ¶æ€ã€‚ è¯¥æ–¹æ³•ç”¨äºç›‘è§†ç³»ç»ŸçŠ¶æ€ï¼Œä¸ç”¨äºåŒæ­¥æ§åˆ¶ã€‚  ----- RUNNABLE TERMINATED
       /*  try {
             robbit.sleep(1000L);
         } catch (InterruptedException e) {
@@ -51,18 +51,18 @@ public class ThreadCreate {
         Thread.State state = robbit.getState();
         System.out.print(state);*/
 
-        //·µ»Ø¸ÃÏß³ÌËùÊôµÄÏß³Ì×é¡£   ---- main
+        //è¿”å›è¯¥çº¿ç¨‹æ‰€å±çš„çº¿ç¨‹ç»„ã€‚   ---- main
        /* ThreadGroup threadGroup = robbit.getThreadGroup();
         System.out.print(threadGroup.getName());*/
 
-        /*//ÖĞ¶ÏÏß³Ì¡£
+        /*//ä¸­æ–­çº¿ç¨‹ã€‚
         robbit.interrupt();
-        //²âÊÔµ±Ç°Ïß³ÌÊÇ·ñÒÑ¾­ÖĞ¶Ï¡£
+        //æµ‹è¯•å½“å‰çº¿ç¨‹æ˜¯å¦å·²ç»ä¸­æ–­ã€‚
         System.out.println(robbit.isInterrupted());
-        //²âÊÔÏß³ÌÊÇ·ñ´¦ÓÚ»î¶¯×´Ì¬¡£
+        //æµ‹è¯•çº¿ç¨‹æ˜¯å¦å¤„äºæ´»åŠ¨çŠ¶æ€ã€‚
         System.out.print(robbit.isAlive());*/
 
-        //²âÊÔ¸ÃÏß³ÌÊÇ·ñÎªÊØ»¤Ïß³Ì¡£
+        //æµ‹è¯•è¯¥çº¿ç¨‹æ˜¯å¦ä¸ºå®ˆæŠ¤çº¿ç¨‹ã€‚
         //System.out.print(robbit.isDaemon());
 
     }

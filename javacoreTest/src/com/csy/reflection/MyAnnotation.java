@@ -6,15 +6,15 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * ÏîÄ¿Ãû³Æ£ºspringbasic
- * ÀàÃû³Æ£ºMyAnnotation
- * ÀàÃèÊö£º×Ô¶¨Òå×¢½â
- * ´´½¨Ê±¼ä£º2016Äê01ÔÂ27ÈÕ ÏÂÎç23:13
+ * é¡¹ç›®åç§°ï¼šspringbasic
+ * ç±»åç§°ï¼šMyAnnotation
+ * ç±»æè¿°ï¼šè‡ªå®šä¹‰æ³¨è§£
+ * åˆ›å»ºæ—¶é—´ï¼š2016å¹´01æœˆ27æ—¥ ä¸‹åˆ23:13
  *
  * @author csypc
  * @version 1.0
  */
-@Retention(RetentionPolicy.RUNTIME)  //×¢ÊÍµÄ±£Áô²ßÂÔ
+@Retention(RetentionPolicy.RUNTIME)  //æ³¨é‡Šçš„ä¿ç•™ç­–ç•¥
 @Target(value={ElementType.METHOD,ElementType.TYPE,ElementType.FIELD,
         ElementType.LOCAL_VARIABLE,ElementType.PARAMETER,ElementType.PACKAGE})
 public @interface MyAnnotation {
