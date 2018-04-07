@@ -2,12 +2,12 @@ package com.csy.linklist;
 
 /**
  * Created with IntelliJ IDEA.
- * User:juzi
+ * User:juzi 陈
  * Date:2015/12/24.
  * Time:22:20.
  */
 public class LinkListTest {
-    public static int size;
+    public static int size ;
     private int index;
     private Node head;
     private Node tail;

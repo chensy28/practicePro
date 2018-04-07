@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 /**
  * Created with IntelliJ IDEA.
- * User:juzi
+ * User:juzi 陈
  * Date:2015/12/24.
  * Time:22:21.
  */
 public class Test {
     public static void main(String []args){
-        LinkListTest list = new LinkListTest();
+        LinkListTest list = new  LinkListTest();
         for(int i=0;i<5;i++){
             Node node = new Node();
             //node.setNext(null);

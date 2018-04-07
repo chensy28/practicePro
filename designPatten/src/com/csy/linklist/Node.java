@@ -2,12 +2,12 @@ package com.csy.linklist;
 
 /**
  * Created with IntelliJ IDEA.
- * User:juzi
+ * User:juzi 陈
  * Date:2015/12/25.
  * Time:23:06.
  */
 public class Node {
-    private String data;
+    private String  data;
     private Node next;
 
     public String getData() {
