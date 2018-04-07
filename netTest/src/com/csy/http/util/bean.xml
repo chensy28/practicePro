@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>  <!-- 文件头写错 出现 “应该有伪属性名” -->
+<beans>
+  <bean id="simulation" class="com.csy.bo.Simulation">
+     <property name="username">
+         <value>juzi</value>
+     </property>
+      <property name="password" value="123"/>
+    <property name="commonDate" ref="commonDate"/>
+
+ </bean>
+
+  <bean id="commonDate" class="com.csy.bo.CommonDate">
+
+  </bean>
+    <bean id="oneBo" class="com.csy.bo.OneBo">
+        <property name="sex" value="123"></property>
+        <property name="price"><value>25.32</value></property>
+    </bean>
+</beans>
